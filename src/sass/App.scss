@@ -1,0 +1,24 @@
+//theme colors
+$primary: #326def;
+$secondary: #1ac888;
+$error: #d32752;
+$info: #f6c31c;
+
+//color palette
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "white": #ffffff,
+
+);
+
+@debug map-get($colors , "error");
+@debug map-has-key($colors , "secondary" );
+
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+}
