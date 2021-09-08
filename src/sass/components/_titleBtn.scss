@@ -1,0 +1,8 @@
+.app__title--btn {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+}

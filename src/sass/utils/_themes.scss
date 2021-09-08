@@ -1,0 +1,12 @@
+@use './variables';
+@mixin theme($name, $color, $secondary) {  
+    .#{$name} {
+      background-color: $color;    
+      color: $secondary;      
+  
+      
+    }
+  }
+  
+  @include theme(theme-light, variables.$light-mode-bg, variables.$dark-text);
+  @include theme(theme-dark, variables.$dark-mode-bg, variables.$light-text);

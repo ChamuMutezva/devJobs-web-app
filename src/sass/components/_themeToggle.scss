@@ -1,109 +1,3 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
-  list-style: none;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-.sr__only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  /* added line */
-  border: 0;
-}
-
-.theme-light {
-  background-color: #f3f5f7;
-  color: #19212e;
-}
-
-.theme-dark {
-  background-color: #121721;
-  color: white;
-}
-
 /* 
   get rid of the fieldset styling and keep 
   this all on a single line 
@@ -157,7 +51,7 @@ select {
     adding more classes, i'm just going to use some
     structural pseudo-classes to target them...
     cause why let all that good work go to waste?!
-
+  
     the large padding is used to position the labels
     on top of the visual UI, so the switch UI itself
     can be mouse clicked or finger tapped to toggle
@@ -178,12 +72,12 @@ select {
     polyfill for you for a bit...
    */
 .radio-switch:focus-within label:first-of-type:after {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3; 
 }
 
 /* polyfill class*/
 .radio-switch.focus-within label:first-of-type:after {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3; 
 }
 
 /* making the switch UI.  */
@@ -211,6 +105,7 @@ select {
 }
 
 .radio-switch label:first-of-type:after {
+  // background: #222;
   background-color: #ffffff;
   border-radius: 1em;
   margin: 0 1em;
@@ -223,6 +118,7 @@ select {
     checked state of the first radio button
   */
 .radio-switch input:first-of-type:checked ~ label:first-of-type:after {
+  //background: #2196f3;
   background-color: #ffffff;
 }
 
@@ -240,45 +136,4 @@ select {
 
 .theme__img {
   display: inline;
-}
-
-.app__title--btn:hover, .app__title--btn:focus {
-  cursor: pointer;
-  outline: dashed currentColor;
-  outline-offset: 0.25em;
-}
-
-.header {
-  background-image: url("../../assets/mobile/bg-pattern-header.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 1.5rem;
-}
-
-body {
-  background-color: #f3f5f7;
-  color: #19212e;
-}
-
-.text-primary {
-  color: #326def;
-}
-
-.text-secondary {
-  color: #1ac888;
-}
-
-.text-error {
-  color: #d32752;
-}
-
-.text-info {
-  color: #f6c31c;
-}
-
-.text-white {
-  color: #ffffff;
 }

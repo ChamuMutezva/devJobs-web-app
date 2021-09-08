@@ -1,3 +1,15 @@
+@use './base';
+@use './utils';
+@use './components';
+@use './layouts';
+@use './pages';
+
+body {
+    background-color: utils.$light-mode-bg;
+    color: utils.$dark-text;
+}
+
+
 //theme colors
 $primary: #326def;
 $secondary: #1ac888;
@@ -14,8 +26,8 @@ $colors: (
 
 );
 
-@debug map-get($colors , "error");
-@debug map-has-key($colors , "secondary" );
+//@debug map-get($colors , "error");
+//@debug map-has-key($colors , "secondary" );
 
 @each $key, $val in $colors {
     .text-#{$key} {
