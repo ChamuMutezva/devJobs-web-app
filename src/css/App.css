@@ -255,7 +255,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 4.5rem;
 }
 
 body {
