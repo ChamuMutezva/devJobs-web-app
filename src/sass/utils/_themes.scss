@@ -3,7 +3,9 @@
     .#{$name} {
       background-color: $color;    
       color: $secondary;      
-  
+      .card {
+        background-color: variables.$card-dk-bg;
+      }
       
     }
   }

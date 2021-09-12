@@ -64,6 +64,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+Getting data from a local json file [Fetch Data from a JSON File in a React App](https://app.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app)
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
