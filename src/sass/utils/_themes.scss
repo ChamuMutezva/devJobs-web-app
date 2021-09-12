@@ -6,6 +6,10 @@
       .card {
         background-color: variables.$card-dk-bg;
       }
+      input {
+        background-color: variables.$input-dk-bg;
+        color: $secondary;
+      }
       
     }
   }

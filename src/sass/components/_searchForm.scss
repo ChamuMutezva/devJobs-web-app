@@ -1,0 +1,103 @@
+@use 'sass:math';
+@use '../utils';
+
+.input__container {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.input__search {
+  font-size: 1rem;
+  outline: 0;
+  padding: 1.8rem 1rem;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.input__search__loc {
+  padding: 1.8rem 3rem;
+}
+
+.search__form {
+  position: relative;
+  // margin-bottom: 4rem;
+  top: -5rem;
+}
+.search--btn {
+  position: absolute;
+  background-color: utils.$blue-bg-color;
+  border: none;
+  outline: none;
+  right: 1rem;
+  top: 30%;
+  border-radius: 6px;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+
+  .search__img {
+    padding: 0.5rem;
+  }
+}
+
+.open__options--btn {
+  border: none;
+  background-color: inherit;
+  position: absolute;
+  right: 6rem;
+  top: 45%;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+}
+
+.optional__search {
+  position: absolute;
+  display: none;
+  background-color: violet;
+  width: 100%;
+  top: 10rem;
+}
+
+.open__options {
+  display: block;
+}
+
+.input__label {
+  position: absolute;
+  font-size: 1rem;
+  transform-origin: top left;
+  transform: translate(1rem, 1.5rem) scale(1);
+  transition: all 0.1s ease-in-out;
+}
+
+.input__label__search {
+  transform: translate(3rem, 1.5rem) scale(1);
+}
+
+.input__container.active label {
+  transform: translate(1rem, 0.25rem) scale(0.75);
+}
+
+.location__img {
+  position: absolute;
+  top: 40%;
+  left: 1rem;
+}
+
+.full__search {
+    display: block;
+	margin: 2rem auto;
+	width: 80%;	
+	padding: 1rem;
+    max-width: 200px;
+}
