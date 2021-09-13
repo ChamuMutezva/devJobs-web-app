@@ -341,9 +341,11 @@ select {
 .optional__search {
   position: absolute;
   display: none;
-  background-color: violet;
+  background-color: white;
   width: 100%;
   top: 10rem;
+  box-shadow: 2px 2px 3px 4px lightgray;
+  border-radius: 6px;
 }
 
 .open__options {
@@ -380,6 +382,10 @@ select {
   max-width: 200px;
 }
 
+.location__filter__time {
+  border-top: 1px solid #1d222a;
+}
+
 .header {
   background-image: url("../../assets/mobile/bg-pattern-header.svg");
   background-repeat: no-repeat;
@@ -400,6 +406,7 @@ select {
 body {
   background-color: #f3f5f7;
   color: #19212e;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .text-primary {

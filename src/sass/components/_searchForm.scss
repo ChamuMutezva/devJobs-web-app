@@ -63,9 +63,11 @@
 .optional__search {
   position: absolute;
   display: none;
-  background-color: violet;
+  background-color: utils.$light-text;
   width: 100%;
   top: 10rem;
+  box-shadow: 2px 2px 3px 4px lightgray;
+border-radius: 6px;
 }
 
 .open__options {
@@ -100,4 +102,8 @@
 	width: 80%;	
 	padding: 1rem;
     max-width: 200px;
+}
+
+.location__filter__time {
+	border-top: 1px solid utils.$card-dk-bg;
 }
