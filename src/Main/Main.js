@@ -7,6 +7,7 @@ import LocationImg from '../assets/desktop/icon-location.svg'
 
 const Main = () => {
     const [data, setData] = useState([])
+    const [press, setPress] = useState(false)
 
     useEffect(() => {
         getData()
@@ -36,13 +37,24 @@ const Main = () => {
 
     }
 
-    const handleSearch = (evt) => {
-        const optionalSearch = document.querySelector(".optional__search");
+    const openOptions = (evt) => {       
+        const optionalSearch = document.querySelector('.optional__search')      
+        
+        setPress(!press)
         console.log(evt.target)
         optionalSearch.classList.toggle("open__options")
     }
 
-    const openOptionsModal = (evt) => {
+    useEffect(() => {
+        const btnPressed = document.querySelector('.open__options--btn')
+        if (press) {
+            btnPressed.setAttribute('aria-pressed', 'true')
+        } else {
+            btnPressed.setAttribute('aria-pressed', 'false')
+        }
+    })
+
+    const searchByTitle = (evt) => {
 
         console.log(evt.target)
 
@@ -92,11 +104,13 @@ const Main = () => {
                         className="input__search"
                     />
 
-                    <button className="open__options--btn" onClick={handleSearch}>
+                    <button className="open__options--btn"
+                        aria-pressed="false"
+                        onClick={openOptions}>
                         <img src={FilterBtn} alt="toggle the filter options" />
                     </button>
 
-                    <button className="search--btn" onClick={openOptionsModal}>
+                    <button className="search--btn" onClick={searchByTitle}>
                         <img src={SearchBtn} className="search__img" alt="search filter using title" />
                     </button>
                 </div>
