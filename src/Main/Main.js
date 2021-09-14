@@ -94,6 +94,7 @@ const Main = () => {
 
     return (
         <main className="main">
+            <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
             <div className="search__form">
 
                 <div className="title__filter__holder input__container">

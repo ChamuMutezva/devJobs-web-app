@@ -14,10 +14,10 @@ const Card = (props) => {
                     <span className="duration__hrs">{props.duration}</span>
                     <span className="span__contract">{props.contract}</span>
                 </div>
-                <h2>{props.position}</h2>
-                <p>{props.company}</p>
+                <h2 className="card__title">{props.position}</h2>
+                <p className="company__name">{props.company}</p>
             </div>
-            <p>{props.location}</p>
+            <a className="card--link" href="/">{props.location}</a>
         </div>
     )
 }

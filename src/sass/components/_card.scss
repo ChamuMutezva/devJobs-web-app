@@ -24,3 +24,27 @@
   position: absolute;
   top: -2rem;
 }
+
+.span__contract {
+  position:relative;
+	margin-left: 1rem;
+  &::before {
+    position: absolute;
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    background-color: utils.$med-grey;
+    border-radius: 50%;
+    top: 50%;
+    left: -.7rem;
+  }
+}
+
+.card__details {
+	margin-top: 1rem;
+}
+
+.card__title {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
