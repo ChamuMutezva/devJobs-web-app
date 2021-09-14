@@ -13,6 +13,7 @@ const Main = () => {
         getData()
     }, [])
 
+    //get data from json api
     const getData = async () => {
 
         await axios.get('data.json'
@@ -37,14 +38,15 @@ const Main = () => {
 
     }
 
+    //open the other filter options
     const openOptions = (evt) => {       
-        const optionalSearch = document.querySelector('.optional__search')      
-        
+        const optionalSearch = document.querySelector('.optional__search')           
         setPress(!press)
         console.log(evt.target)
         optionalSearch.classList.toggle("open__options")
     }
 
+    //set aria-pressed attribute on open__options--btn toggle 
     useEffect(() => {
         const btnPressed = document.querySelector('.open__options--btn')
         if (press) {
@@ -54,10 +56,9 @@ const Main = () => {
         }
     })
 
+    //search by title function
     const searchByTitle = (evt) => {
-
         console.log(evt.target)
-
     }
 
     const init = () => {
@@ -67,7 +68,7 @@ const Main = () => {
         });
     };
 
-
+    // set focus and blur on input elements
     const bindEvents = (element) => {
         const inputSearch = element.querySelector('input');
         inputSearch.addEventListener('focus', handleFocus);
@@ -132,7 +133,7 @@ const Main = () => {
 
                     <div className="location__filter__time">
                         <input type="checkbox" name="time" id="time__filter" />
-                        <label htmlFor="time__filter">Full time</label>
+                        <label htmlFor="time__filter">Full time</label>                        
                     </div>
                     <button className="full__search">Search</button>
                 </div>

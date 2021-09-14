@@ -1,18 +1,26 @@
 @use './variables';
-@mixin theme($name, $color, $secondary) {  
-    .#{$name} {
-      background-color: $color;    
-      color: $secondary;      
-      .card {
-        background-color: variables.$card-dk-bg;
-      }
-      input {
-        background-color: variables.$input-dk-bg;
-        color: $secondary;
-      }
-      
+@mixin theme($name, $color, $secondary) {
+  .#{$name} {
+    background-color: $color;
+    color: $secondary;
+    //.card {
+    // background-color: variables.$card-dk-bg;
+    //  }
+    .card__holder {
+      background-color: variables.$card-dk-bg;
+    }
+    input {
+      background-color: variables.$input-dk-bg;
+      color: $secondary;
+    }
+    .optional__search {
+      background-color: variables.$card-dk-bg;
+    }
+    .search__form {
+      background-color: variables.$card-dk-bg;
     }
   }
-  
-  @include theme(theme-light, variables.$light-mode-bg, variables.$dark-text);
-  @include theme(theme-dark, variables.$dark-mode-bg, variables.$light-text);
+}
+
+@include theme(theme-light, variables.$light-mode-bg, variables.$dark-text);
+@include theme(theme-dark, variables.$dark-mode-bg, variables.$light-text);
