@@ -24,3 +24,12 @@
 
 @include theme(theme-light, variables.$light-mode-bg, variables.$dark-text);
 @include theme(theme-dark, variables.$dark-mode-bg, variables.$light-text);
+
+@mixin hoverFocus() {  
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+}

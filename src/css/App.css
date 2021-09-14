@@ -304,6 +304,7 @@ select {
 .search__form {
   position: relative;
   top: -5rem;
+  border-radius: 6px;
 }
 @media screen and (min-width: 42.5rem) {
   .search__form {
@@ -314,7 +315,11 @@ select {
 .input__container {
   position: relative;
   border: 1px solid transparent;
-  border-radius: 6px;
+}
+@media screen and (min-width: 42.5rem) {
+  .input__container {
+    border: none;
+  }
 }
 
 @media screen and (min-width: 42.5rem) {
@@ -351,6 +356,11 @@ select {
 .open__options {
   display: block;
 }
+@media screen and (min-width: 42.5rem) {
+  .open__options {
+    display: flex;
+  }
+}
 
 .input__search {
   font-size: 1rem;
@@ -359,6 +369,18 @@ select {
   width: 100%;
   border: 1px solid transparent;
   border-radius: 6px;
+  /*
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
+}
+.input__search:hover, .input__search:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 @media screen and (min-width: 42.5rem) {
   .input__search {
@@ -367,8 +389,33 @@ select {
   }
 }
 
+.time__filter {
+  /* &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
+}
+.time__filter:hover, .time__filter:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
+
 .input__search__loc {
   padding: 1.8rem 3rem;
+  /* &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
+}
+.input__search__loc:hover, .input__search__loc:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .search--btn {
@@ -379,6 +426,14 @@ select {
   right: 1rem;
   top: 30%;
   border-radius: 6px;
+  /*
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      outline: dashed currentColor;
+      outline-offset: 0.25em;
+    }
+  */
 }
 .search--btn:hover, .search--btn:focus {
   cursor: pointer;
@@ -395,6 +450,13 @@ select {
   position: absolute;
   right: 6rem;
   top: 45%;
+  /*
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
 }
 .open__options--btn:hover, .open__options--btn:focus {
   cursor: pointer;
@@ -414,9 +476,17 @@ select {
   transform: translate(1rem, 1.5rem) scale(1);
   transition: all 0.1s ease-in-out;
 }
+@media screen and (min-width: 42.5rem) {
+  .input__label {
+    transform: translate(3rem, 2rem) scale(1);
+  }
+}
 
 .input__label__search {
-  transform: translate(3rem, 1.5rem) scale(1);
+  transform: translate(3rem, 2rem) scale(1);
+  /* @media screen and (min-width: 42.5rem) {
+    transform: translate(3rem, 2rem) scale(1);
+  }*/
 }
 
 .input__container.active label {
@@ -429,33 +499,40 @@ select {
   left: 1rem;
 }
 
-.full__search {
+.full__search--btn {
   display: block;
   margin: 2rem auto;
   width: 80%;
   padding: 1rem;
-  max-width: 12.5rem;
+  max-width: 10.5rem;
   background-color: #5964E0;
   color: white;
   border: none;
+  border-radius: 6px;
+  font-weight: 800;
+}
+.full__search--btn:hover, .full__search--btn:focus {
+  cursor: pointer;
+  outline: dashed #5964E0;
+  outline-offset: 0.25em;
 }
 @media screen and (min-width: 42.5rem) {
-  .full__search {
+  .full__search--btn {
     position: absolute;
     right: 0;
-    max-width: 6.25rem;
+    max-width: 5.25rem;
     margin: 1rem;
   }
 }
 
 .location__filter__time {
   border-top: 1px solid #1d222a;
+  padding: 1rem;
 }
 @media screen and (min-width: 42.5rem) {
   .location__filter__time {
     flex: 1 1 50%;
     border-top: none;
-    border-left: 1px solid #1d222a;
     display: flex;
     align-items: center;
   }
@@ -464,6 +541,8 @@ select {
 @media screen and (min-width: 42.5rem) {
   .location__filter__holder {
     flex: 1 1 50%;
+    border-left: 1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
   }
 }
 

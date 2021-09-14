@@ -4,6 +4,7 @@
 .search__form {
   position: relative;
   top: -5rem;
+  border-radius: 6px;
 
   @media screen and (min-width: 42.5rem) {
     display: flex;
@@ -13,7 +14,9 @@
 .input__container {
   position: relative;
   border: 1px solid transparent;
-  border-radius: 6px;
+  @media screen and (min-width: 42.5rem) {
+    border: none;
+  }
 }
 
 .title__filter__holder {
@@ -47,6 +50,9 @@
 
 .open__options {
   display: block;
+  @media screen and (min-width: 42.5rem) {
+    display: flex;
+  }
 }
 
 .input__search {
@@ -56,14 +62,40 @@
   width: 100%;
   border: 1px solid transparent;
   border-radius: 6px;
-  @media screen and (min-width: 42.5rem) {   
+  /*
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
+  @include utils.hoverFocus;
+
+  @media screen and (min-width: 42.5rem) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
 }
 
+.time__filter {
+  @include utils.hoverFocus;
+  /* &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
+}
+
 .input__search__loc {
   padding: 1.8rem 3rem;
+  @include utils.hoverFocus;
+  /* &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }*/
 }
 
 .search--btn {
@@ -74,14 +106,15 @@
   right: 1rem;
   top: 30%;
   border-radius: 6px;
-
+  @include utils.hoverFocus;
+  /*
   &:hover,
   &:focus {
     cursor: pointer;
     outline: dashed currentColor;
     outline-offset: 0.25em;
   }
-
+*/
   .search__img {
     padding: 0.5rem;
   }
@@ -93,13 +126,14 @@
   position: absolute;
   right: 6rem;
   top: 45%;
-
+  @include utils.hoverFocus;
+  /*
   &:hover,
   &:focus {
     cursor: pointer;
     outline: dashed currentColor;
     outline-offset: 0.25em;
-  }
+  }*/
   @media screen and (min-width: 42.5rem) {
     display: none;
   }
@@ -111,10 +145,16 @@
   transform-origin: top left;
   transform: translate(1rem, 1.5rem) scale(1);
   transition: all 0.1s ease-in-out;
+  @media screen and (min-width: 42.5rem) {
+    transform: translate(3rem, 2rem) scale(1);
+  }
 }
 
 .input__label__search {
-  transform: translate(3rem, 1.5rem) scale(1);
+  transform: translate(3rem, 2rem) scale(1);
+  /* @media screen and (min-width: 42.5rem) {
+    transform: translate(3rem, 2rem) scale(1);
+  }*/
 }
 
 .input__container.active label {
@@ -127,36 +167,48 @@
   left: 1rem;
 }
 
-.full__search {
+.full__search--btn {
   display: block;
   margin: 2rem auto;
   width: 80%;
   padding: 1rem;
-  max-width: 12.5rem;
+  max-width: 10.5rem;
   background-color: utils.$blue-bg-color;
   color: utils.$light-text;
   border: none;
+  border-radius: 6px;
+  font-weight: 800;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed utils.$blue-bg-color;
+    outline-offset: 0.25em;
+  }
+
   @media screen and (min-width: 42.5rem) {
     position: absolute;
     right: 0;
-    max-width: 6.25rem;
+    max-width: 5.25rem;
     margin: 1rem;
   }
 }
 
 .location__filter__time {
   border-top: 1px solid utils.$card-dk-bg;
+  padding: 1rem;
   @media screen and (min-width: 42.5rem) {
     flex: 1 1 50%;
     border-top: none;
-    border-left: 1px solid utils.$card-dk-bg;
+    // border-left: 1px solid utils.$card-dk-bg;
     display: flex;
     align-items: center;
   }
 }
 .location__filter__holder {
   @media screen and (min-width: 42.5rem) {
-   
     flex: 1 1 50%;
+    border-left: 1px solid utils.$lt-grey;
+    border-right: 1px solid utils.$lt-grey;
   }
 }

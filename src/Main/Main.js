@@ -39,8 +39,8 @@ const Main = () => {
     }
 
     //open the other filter options
-    const openOptions = (evt) => {       
-        const optionalSearch = document.querySelector('.optional__search')           
+    const openOptions = (evt) => {
+        const optionalSearch = document.querySelector('.optional__search')
         setPress(!press)
         console.log(evt.target)
         optionalSearch.classList.toggle("open__options")
@@ -132,10 +132,14 @@ const Main = () => {
                     </div>
 
                     <div className="location__filter__time">
-                        <input type="checkbox" name="time" id="time__filter" />
-                        <label htmlFor="time__filter">Full time</label>                        
+                        <input type="checkbox"
+                            name="time"
+                            id="time__filter"
+                            className="time__filter"
+                        />
+                        <label htmlFor="time__filter">Full time</label>
                     </div>
-                    <button className="full__search">Search</button>
+                    <button className="full__search--btn">Search</button>
                 </div>
             </div>
             <ul className="cards__list">
