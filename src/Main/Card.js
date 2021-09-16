@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 const Card = (props) => {
     return (
         <div className="card">
@@ -17,7 +18,10 @@ const Card = (props) => {
                 <h2 className="card__title">{props.position}</h2>
                 <p className="company__name">{props.company}</p>
             </div>
-            <a className="card--link" href="/">{props.location}</a>
+            <Link className="card--link"
+                to={`/ListPage/:${props.id}`}
+                onClick={props.linkClicked}>{props.location}
+            </Link>
         </div>
     )
 }

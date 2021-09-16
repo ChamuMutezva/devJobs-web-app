@@ -1,14 +1,18 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+//import { useParams } from 'react-router-dom'
+import { useHistory } from "react-router";
 import Card from './Card'
 import FilterBtn from '../assets/mobile/icon-filter.svg'
 import SearchBtn from '../assets/desktop/icon-search.svg'
 import LocationImg from '../assets/desktop/icon-location.svg'
 
 const HomePage = () => {
+    const history = useHistory()
+    //let { id } = useParams();
     const [data, setData] = useState([])
     const [press, setPress] = useState(false)
-
+    // console.log(id)
     useEffect(() => {
         getData()
     }, [])
@@ -87,6 +91,10 @@ const HomePage = () => {
         }
     };
 
+    const routeChange = (evt, id) => {
+        evt.preventDefault()
+        history.push(`job/${id}`)
+    }
 
     useEffect(() => {
         init()
@@ -154,6 +162,7 @@ const HomePage = () => {
                             position={item.position}
                             company={item.company}
                             location={item.location}
+                            linkClicked={routeChange}
                         />
                     </li>
                 )}

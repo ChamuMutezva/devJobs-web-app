@@ -68,6 +68,10 @@ Getting data from a local json file [Fetch Data from a JSON File in a React App]
 
 How to build a floating label input field [How to build a floating label input field](https://itnext.io/how-to-build-a-floating-label-input-field-f9b21669fe2f)
 
+Toggle switch design [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/)
+
+Theme Switcher [A Theme Switcher](https://inclusive-components.design/a-theme-switcher/)
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
