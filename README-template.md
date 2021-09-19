@@ -72,6 +72,8 @@ Toggle switch design [On Designing and Building Toggle Switches](https://www.sar
 
 Theme Switcher [A Theme Switcher](https://inclusive-components.design/a-theme-switcher/)
 
+Passing data to sibling pages/components using Context Api video [React State Management Tutorial | Context Api | React Tutorial For Beginners](https://www.youtube.com/watch?v=35lXWvCuM8o)
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:

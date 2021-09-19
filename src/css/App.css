@@ -577,6 +577,14 @@ select {
   }
 }
 
+.job__require__item {
+  list-style: disc;
+}
+
+.job__role__item {
+  list-style: decimal;
+}
+
 .header {
   background-image: url("../../assets/mobile/bg-pattern-header.svg");
   background-repeat: no-repeat;

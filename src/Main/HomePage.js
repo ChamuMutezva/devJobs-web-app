@@ -1,48 +1,20 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-//import { useParams } from 'react-router-dom'
-import { useHistory } from "react-router";
+import { useState, useEffect, useContext } from 'react'
+import { useHistory } from 'react-router'
+import { JobsContext } from './JobsContext'
 import Card from './Card'
 import FilterBtn from '../assets/mobile/icon-filter.svg'
 import SearchBtn from '../assets/desktop/icon-search.svg'
 import LocationImg from '../assets/desktop/icon-location.svg'
 
 const HomePage = () => {
+    //useHistory hook - access to navigate to the listPage
     const history = useHistory()
-    //let { id } = useParams();
-    const [data, setData] = useState([])
+    //const value = useContext(JobsContext)    
+    // const [data, setData] = useState([])
+    const [data] = useContext(JobsContext)
     const [press, setPress] = useState(false)
-    // console.log(id)
-    useEffect(() => {
-        getData()
-    }, [])
-
-    //get data from json api
-    const getData = async () => {
-
-        await axios.get('data.json'
-
-            , {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            }
-        )
-
-            .then(function (response) {
-                console.log(response)
-                return response.data;
-            })
-
-            .then(function (myJson) {
-                console.log(myJson);
-                setData(myJson)
-            });
-
-    }
-
-    //open the other filter options
+  
+    //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
         const optionalSearch = document.querySelector('.optional__search')
         setPress(!press)
@@ -65,6 +37,8 @@ const HomePage = () => {
         console.log(evt.target)
     }
 
+    // call the bindevents to 
+    // set focus and blur on input elements
     const init = () => {
         const inputContainer = document.querySelectorAll('.input__container');
         inputContainer.forEach((element) => {
@@ -93,7 +67,9 @@ const HomePage = () => {
 
     const routeChange = (evt, id) => {
         evt.preventDefault()
-        history.push(`job/${id}`)
+        history.push(`job/${id}`)       
+        console.log(id)
+        console.log(history)
     }
 
     useEffect(() => {
@@ -102,9 +78,9 @@ const HomePage = () => {
 
     return (
         <main className="main">
+
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
             <div className="search__form">
-
                 <div className="title__filter__holder input__container">
                     <label htmlFor="title__filter"
                         className="input__label">Filter by title</label>
@@ -113,19 +89,17 @@ const HomePage = () => {
                         id="title__filter"
                         className="input__search"
                     />
-
                     <button className="open__options--btn"
                         aria-pressed="false"
                         onClick={openOptions}>
                         <img src={FilterBtn} alt="toggle the filter options" />
                     </button>
-
                     <button className="search--btn" onClick={searchByTitle}>
                         <img src={SearchBtn} className="search__img" alt="search filter using title" />
                     </button>
+
                 </div>
                 <div className="optional__search">
-
                     <div className="location__filter__holder input__container">
                         <label
                             htmlFor="location__filter"
@@ -139,7 +113,6 @@ const HomePage = () => {
                         />
                         <img src={LocationImg} alt="" className="location__img" />
                     </div>
-
                     <div className="location__filter__time">
                         <input type="checkbox"
                             name="time"
@@ -162,11 +135,13 @@ const HomePage = () => {
                             position={item.position}
                             company={item.company}
                             location={item.location}
-                            linkClicked={routeChange}
+                            linkClicked={(evt) => {routeChange(evt, item.id)}}
+                          
                         />
                     </li>
                 )}
             </ul>
+
 
         </main>
     )
