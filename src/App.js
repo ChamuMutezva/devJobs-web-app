@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {JobsProvider} from './Main/JobsContext'
+import {JobsProvider} from './Context/JobsContext'
 import './sass/App.scss';
 import Header from './Header/Header.js'
 import HomePage from './Main/HomePage';

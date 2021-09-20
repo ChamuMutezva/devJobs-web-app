@@ -49,9 +49,10 @@
 	margin-bottom: 1rem;
 }
 
-.card--link {
-	margin: 2rem auto 1rem;
-	display: block;
-  font-weight: 700;
+.card__link {
   text-decoration: none;
+}
+.card--location {
+	margin: 2rem auto 1rem;	
+  font-weight: 700; 
 }

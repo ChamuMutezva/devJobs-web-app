@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router'
-import { JobsContext } from './JobsContext'
+import { JobsContext } from '../Context/JobsContext'
 import Card from './Card'
 import FilterBtn from '../assets/mobile/icon-filter.svg'
 import SearchBtn from '../assets/desktop/icon-search.svg'

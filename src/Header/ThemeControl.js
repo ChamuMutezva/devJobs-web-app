@@ -3,11 +3,12 @@ import Sun from '../assets/desktop/icon-sun.svg'
 import Moon from '../assets/desktop/icon-moon.svg'
 
 const ThemeController = () => {
-    const [theme, setTheme] = useState(false)
     /* Get theme value from localStorage. */
     const getThemeFromLocalStorage = () => {
         return localStorage.getItem("globalTheme") === "true"
     }
+    const [theme, setTheme] = useState(getThemeFromLocalStorage)
+
 
     /* Post to localStorage user preferred theme. */
     const postThemeToLocalStorage = (newTheme) => {

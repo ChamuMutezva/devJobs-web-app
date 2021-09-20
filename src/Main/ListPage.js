@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { JobsContext } from './JobsContext'
+import { JobsContext } from '../Context/JobsContext'
 const ListPage = () => {
     const location = useLocation()
 
