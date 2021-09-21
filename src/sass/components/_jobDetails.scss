@@ -1,0 +1,44 @@
+@use "../utils";
+.duration {
+  color: utils.$med-grey;
+  font-size: 1rem;
+}
+.card__title__listpage,
+.requirements__title {
+  font-size: 1.25rem;
+  color: utils.$card-dk-bg;
+}
+.company__location {
+  font-size: 0.875rem;
+  color: utils.$blue-bg-color;
+  font-weight: 700;
+}
+
+.apply--btn {
+  background-color: utils.$blue-bg-color;
+  color: utils.$light-text;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.8rem 1rem;
+  max-width: 18.5rem;
+  margin: 3rem auto;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+}
+.job__description, .require__content {
+  color: utils.$med-grey;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+.require__content {
+    margin-top: 2rem;
+}

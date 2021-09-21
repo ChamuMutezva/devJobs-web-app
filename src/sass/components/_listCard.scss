@@ -1,48 +1,43 @@
-@use '../utils';
+@use "../utils";
 .job__require__item {
-	list-style: disc;
+  list-style: disc;
 }
 .job__role__item {
-	list-style: decimal;
+  list-style: decimal;
 }
-.card__img__holder {
-	left: 50%;
-    margin-left: -25px;
+.list__card__img__holder {
+  left: 50%;
+  margin-left: -25px;
 }
 .list__card {
-	text-align: center;
-	margin-top: -1rem;
+  text-align: center;
+  margin-top: -1rem;
 }
 .company__website--btn {
-	background-color: utils.$light-grey-text;
-	padding: .7rem 1.3rem;
-	margin-top: 1rem;
-	display: inline-block;
-	text-decoration: none;
-	border-radius: 6px;
-	font-size: 1rem;
-    font-weight: 700;
+  background-color: utils.$light-grey-text;
+  padding: 0.7rem 1.3rem;
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
 }
 
 .card__title__listpage {
-	margin: 0;
-	font-size: 1.25rem;
+  margin: 0;
+  font-size: 1.25rem;
 }
 .details {
-    background-color: utils.$white-bg;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 6px;
-}
-.apply--btn {
-    background-color: utils.$blue-bg-color;
-	color: utils.$light-text;
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 6px;
-    padding: .8rem 1rem;
-    max-width: 18.5rem;
-    margin: 3rem auto;
+  background-color: utils.$white-bg;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
 }

@@ -10,6 +10,7 @@ const ListPage = () => {
     const pathname = location.pathname.split("/")
     const lastitem = pathname[pathname.length - 1]
     const targetJob = data[lastitem - 1]
+    
     const websiteArray = targetJob.website.split("/")
     const websiteName = websiteArray[websiteArray.length - 1]
     console.log(data)
@@ -19,10 +20,16 @@ const ListPage = () => {
     console.log(targetJob)
 
     useEffect(() => {
-
+        console.log(targetJob)
+        if (targetJob === undefined) {
+            return <div>return to homepage</div>
+        }
     }, [targetJob])
 
+  
+
     return (
+        
         <main className="main">
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
             <div className="card__holder list__card">
@@ -55,12 +62,12 @@ const ListPage = () => {
                         <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
                         <p className="company__location">{targetJob.location}</p>
                     </div>
-                    <a className="apply--btn" href={targetJob.apply}>apply</a>
+                    <a className="apply--btn" href={targetJob.apply}>apply now</a>
+                    <p className="job__description">{targetJob.description}</p>
                 </div>
                 <div className="requirements">
                     <h2 className="requirements__title">Requirements</h2>
-                    <p className="require__content">
-                        {targetJob.description}
+                    <p className="require__content">                        
                         {targetJob.requirements.content}
                     </p>
 

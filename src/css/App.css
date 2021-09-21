@@ -309,7 +309,7 @@ select {
 
 .span__contract {
   position: relative;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 .span__contract::before {
   position: absolute;
@@ -319,7 +319,7 @@ select {
   background-color: #6d7f97;
   border-radius: 50%;
   top: 50%;
-  left: -0.7rem;
+  left: -1.3rem;
 }
 
 .card__details {
@@ -593,7 +593,7 @@ select {
   list-style: decimal;
 }
 
-.card__img__holder {
+.list__card__img__holder {
   left: 50%;
   margin-left: -25px;
 }
@@ -613,6 +613,11 @@ select {
   font-size: 1rem;
   font-weight: 700;
 }
+.company__website--btn:hover, .company__website--btn:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
 
 .card__title__listpage {
   margin: 0;
@@ -627,16 +632,51 @@ select {
   border-radius: 6px;
 }
 
+.duration {
+  color: #6d7f97;
+  font-size: 1rem;
+}
+
+.card__title__listpage,
+.requirements__title {
+  font-size: 1.25rem;
+  color: #1d222a;
+}
+
+.company__location {
+  font-size: 0.875rem;
+  color: #5964E0;
+  font-weight: 700;
+}
+
 .apply--btn {
   background-color: #5964E0;
   color: white;
   display: block;
   text-decoration: none;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 0.8rem 1rem;
   max-width: 18.5rem;
   margin: 3rem auto;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.apply--btn:hover, .apply--btn:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
+
+.job__description, .require__content {
+  color: #6d7f97;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.require__content {
+  margin-top: 2rem;
 }
 
 .header {

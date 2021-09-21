@@ -27,7 +27,7 @@
 
 .span__contract {
   position: relative;
-  margin-left: 1rem;
+  margin-left: 2rem;
   &::before {
     position: absolute;
     content: "";
@@ -36,7 +36,7 @@
     background-color: utils.$med-grey;
     border-radius: 50%;
     top: 50%;
-    left: -0.7rem;
+    left: -1.3rem;
   }
 }
 
