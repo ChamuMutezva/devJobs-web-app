@@ -1,13 +1,13 @@
-@use '../utils';
+@use "../utils";
 
 .card__holder {
   border-radius: 6px;
   //	overflow: hidden;
-  background-color: utils.$card-lt-bg;
+  background-color: utils.$white-bg;
 }
 .card {
-    padding: 2rem 1rem;
-    position: relative
+  padding: 2rem 1rem;
+  position: relative;
 }
 .cards__list {
   display: grid;
@@ -26,33 +26,33 @@
 }
 
 .span__contract {
-  position:relative;
-	margin-left: 1rem;
+  position: relative;
+  margin-left: 1rem;
   &::before {
     position: absolute;
     content: "";
-    width: .5rem;
-    height: .5rem;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: utils.$med-grey;
     border-radius: 50%;
     top: 50%;
-    left: -.7rem;
+    left: -0.7rem;
   }
 }
 
 .card__details {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .card__title {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card__link {
   text-decoration: none;
 }
 .card--location {
-	margin: 2rem auto 1rem;	
-  font-weight: 700; 
+  margin: 2rem auto 1rem;
+  font-weight: 700;
 }

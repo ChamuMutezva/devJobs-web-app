@@ -1,4 +1,4 @@
-@use './variables';
+@use "./variables";
 @mixin theme($name, $color, $secondary) {
   .#{$name} {
     background-color: $color;
@@ -6,6 +6,7 @@
     //.card {
     // background-color: variables.$card-dk-bg;
     //  }
+
     .card__holder {
       background-color: variables.$card-dk-bg;
     }
@@ -13,11 +14,14 @@
       background-color: variables.$input-dk-bg;
       color: $secondary;
     }
-    .optional__search {
-      background-color: variables.$card-dk-bg;
-    }
+    .optional__search,
+    .details,
     .search__form {
       background-color: variables.$card-dk-bg;
+    }
+    .list__card {
+      background-color: variables.$input-dk-bg;
+      color: $secondary;
     }
   }
 }
@@ -25,7 +29,7 @@
 @include theme(theme-light, variables.$light-mode-bg, variables.$dark-text);
 @include theme(theme-dark, variables.$dark-mode-bg, variables.$light-text);
 
-@mixin hoverFocus() {  
+@mixin hoverFocus() {
   &:hover,
   &:focus {
     cursor: pointer;

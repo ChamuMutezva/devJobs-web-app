@@ -105,11 +105,14 @@ select {
   background-color: #1d222a;
   color: #19212e;
 }
-.theme-light .optional__search {
-  background-color: #1d222a;
-}
+.theme-light .optional__search,
+.theme-light .details,
 .theme-light .search__form {
   background-color: #1d222a;
+}
+.theme-light .list__card {
+  background-color: #1d222a;
+  color: #19212e;
 }
 
 .theme-dark {
@@ -123,11 +126,14 @@ select {
   background-color: #1d222a;
   color: white;
 }
-.theme-dark .optional__search {
-  background-color: #1d222a;
-}
+.theme-dark .optional__search,
+.theme-dark .details,
 .theme-dark .search__form {
   background-color: #1d222a;
+}
+.theme-dark .list__card {
+  background-color: #1d222a;
+  color: white;
 }
 
 /* 
@@ -585,6 +591,52 @@ select {
 
 .job__role__item {
   list-style: decimal;
+}
+
+.card__img__holder {
+  left: 50%;
+  margin-left: -25px;
+}
+
+.list__card {
+  text-align: center;
+  margin-top: -1rem;
+}
+
+.company__website--btn {
+  background-color: #c9c9c9;
+  padding: 0.7rem 1.3rem;
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card__title__listpage {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.details {
+  background-color: white;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.apply--btn {
+  background-color: #5964E0;
+  color: white;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  max-width: 18.5rem;
+  margin: 3rem auto;
 }
 
 .header {
