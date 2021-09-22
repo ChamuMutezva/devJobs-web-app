@@ -114,6 +114,9 @@ select {
   background-color: #1d222a;
   color: #19212e;
 }
+.theme-light .card__title, .theme-light .list__title {
+  color: #19212e;
+}
 
 .theme-dark {
   background-color: #121721;
@@ -133,6 +136,9 @@ select {
 }
 .theme-dark .list__card {
   background-color: #1d222a;
+  color: white;
+}
+.theme-dark .card__title, .theme-dark .list__title {
   color: white;
 }
 
@@ -585,14 +591,6 @@ select {
   }
 }
 
-.job__require__item {
-  list-style: disc;
-}
-
-.job__role__item {
-  list-style: decimal;
-}
-
 .list__card__img__holder {
   left: 50%;
   margin-left: -25px;
@@ -628,8 +626,21 @@ select {
   background-color: white;
   padding: 2rem 1rem;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   border-radius: 6px;
+}
+
+.footer {
+  background: white;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 3rem;
+  padding: 1rem 1rem 3rem;
+}
+.footer .footer__apply--btn {
+  margin: 2rem auto 0;
+  width: 100%;
 }
 
 .duration {
@@ -638,7 +649,8 @@ select {
 }
 
 .card__title__listpage,
-.requirements__title {
+.requirements__title,
+.list__title {
   font-size: 1.25rem;
   color: #1d222a;
 }
@@ -669,10 +681,37 @@ select {
   outline-offset: 0.25em;
 }
 
-.job__description, .require__content {
+.job__require__item {
+  list-style: disc;
+  margin-left: 1rem;
+  color: #5964E0;
+}
+
+.job__role__item {
+  list-style: decimal;
+  margin-left: 1rem;
+  color: #5964E0;
+}
+
+.list__title {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.job__description,
+.require__content,
+.role__content {
   color: #6d7f97;
   font-size: 1rem;
   margin-bottom: 2.5rem;
+}
+
+.require__content__item,
+.role__content__item {
+  color: #6d7f97;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
 }
 
 .require__content {

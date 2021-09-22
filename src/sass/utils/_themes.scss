@@ -23,6 +23,9 @@
       background-color: variables.$input-dk-bg;
       color: $secondary;
     }
+    .card__title, .list__title {
+      color: $secondary;
+    }
   }
 }
 

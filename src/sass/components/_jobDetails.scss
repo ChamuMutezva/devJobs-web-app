@@ -4,7 +4,8 @@
   font-size: 1rem;
 }
 .card__title__listpage,
-.requirements__title {
+.requirements__title,
+.list__title {
   font-size: 1.25rem;
   color: utils.$card-dk-bg;
 }
@@ -34,11 +35,37 @@
     outline-offset: 0.25em;
   }
 }
-.job__description, .require__content {
+
+.job__require__item {
+  list-style: disc;
+  margin-left: 1rem;
+  color: utils.$blue-bg-color;
+}
+.job__role__item {
+  list-style: decimal;
+  margin-left: 1rem;
+  color: utils.$blue-bg-color;
+}
+
+.list__title {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.job__description,
+.require__content,
+.role__content {
   color: utils.$med-grey;
   font-size: 1rem;
   margin-bottom: 2.5rem;
 }
+.require__content__item,
+.role__content__item {
+  color: utils.$med-grey;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
 .require__content {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }

@@ -77,6 +77,7 @@ const HomePage = () => {
     })
 
     return (
+        
         <main className="main">
 
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>

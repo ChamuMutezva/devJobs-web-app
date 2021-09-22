@@ -1,10 +1,5 @@
 @use "../utils";
-.job__require__item {
-  list-style: disc;
-}
-.job__role__item {
-  list-style: decimal;
-}
+
 .list__card__img__holder {
   left: 50%;
   margin-left: -25px;
@@ -38,6 +33,19 @@
   background-color: utils.$white-bg;
   padding: 2rem 1rem;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   border-radius: 6px;
+}
+
+.footer {
+  background: white;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 3rem;
+  padding: 1rem 1rem 3rem;
+  .footer__apply--btn {
+    margin: 2rem auto 0;
+    width: 100%;
+  }
 }
