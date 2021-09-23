@@ -50,6 +50,11 @@
 .list__title {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  @media screen and (min-width: 42.5rem) {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    text-align: left;
+  }
 }
 
 .job__description,

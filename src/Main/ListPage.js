@@ -32,8 +32,8 @@ const ListPage = () => {
         <div className="list__container">
             <main className="main">
                 <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
-                <div className="card__holder list__card">
-                    <div className="card">
+                <div className="card__holder list__card__holder">
+                    <div className="card list__card">
 
                         <div className="card__img__holder list__card__img__holder"
                             style={{ backgroundColor: targetJob.logoBackground }}>
@@ -43,11 +43,14 @@ const ListPage = () => {
                                 alt=""
                             />
                         </div>
-                        <div className="company__details">
-                            <h2 className="company__name list__title">{targetJob.company}</h2>
-                            <p className="website__name">{websiteName}.com</p>
+
+                        <div className="company__details__splitter">
+                            <div className="company__details">
+                                <h2 className="company__name list__title">{targetJob.company}</h2>
+                                <p className="website__name">{websiteName}.com</p>
+                            </div>
+                            <a className="company__website--btn" href={targetJob.website}>Company Site</a>
                         </div>
-                        <a className="company__website--btn" href={targetJob.website}>Company Site</a>
 
                     </div>
                 </div>

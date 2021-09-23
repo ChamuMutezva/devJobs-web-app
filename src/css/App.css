@@ -591,14 +591,49 @@ select {
   }
 }
 
+@media screen and (min-width: 42.5rem) {
+  .list__card {
+    display: flex;
+    padding: 0;
+  }
+}
+
 .list__card__img__holder {
   left: 50%;
   margin-left: -25px;
 }
+@media screen and (min-width: 42.5rem) {
+  .list__card__img__holder {
+    left: 0%;
+    top: 0;
+    margin-left: 0px;
+    height: 8.75rem;
+    max-width: 8.75rem;
+    position: relative;
+    flex: 1 1 30%;
+    border-radius: 0;
+  }
+}
 
-.list__card {
+@media screen and (min-width: 42.5rem) {
+  .company__details__splitter {
+    flex: 1 1 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+  }
+}
+
+.list__card__holder {
   text-align: center;
   margin-top: -1rem;
+}
+@media screen and (min-width: 42.5rem) {
+  .list__card__holder {
+    overflow: hidden;
+    border-radius: 0 6px 6px 6px;
+  }
 }
 
 .company__website--btn {
@@ -697,6 +732,13 @@ select {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+@media screen and (min-width: 42.5rem) {
+  .list__title {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    text-align: left;
+  }
+}
 
 .job__description,
 .require__content,
@@ -727,12 +769,23 @@ select {
   align-items: center;
   padding: 2rem 1.5rem 4.5rem;
 }
+@media screen and (min-width: 42.5rem) {
+  .header {
+    background-image: url("../../assets/tablet/bg-pattern-header.svg");
+    padding: 2.6rem 1.5rem 5.5rem;
+  }
+}
 
 .main {
   padding: 0.5rem 1.5rem;
   margin: auto;
   max-width: 69.375rem;
   position: relative;
+}
+@media screen and (min-width: 42.5rem) {
+  .main {
+    padding: 0.5rem 2.5rem;
+  }
 }
 
 body {
