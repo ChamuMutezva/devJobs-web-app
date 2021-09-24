@@ -30,7 +30,7 @@ const ListPage = () => {
 
     return (
         <div className="list__container">
-            <main className="main">
+            <main className="main list__main">
                 <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
                 <div className="card__holder list__card__holder">
                     <div className="card list__card">
@@ -57,15 +57,17 @@ const ListPage = () => {
 
                 <div className="details">
                     <div className="card__details">
-                        <div className="company__more">
-                            <div className="duration">
-                                <span className="duration__hrs">{targetJob.postedAt}</span>
-                                <span className="span__contract">{targetJob.contract}</span>
+                        <div className="card__details__more">
+                            <div className="company__more">
+                                <div className="duration">
+                                    <span className="duration__hrs">{targetJob.postedAt}</span>
+                                    <span className="span__contract">{targetJob.contract}</span>
+                                </div>
+                                <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
+                                <p className="company__location">{targetJob.location}</p>
                             </div>
-                            <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
-                            <p className="company__location">{targetJob.location}</p>
+                            <a className="apply--btn" href={targetJob.apply}>apply now</a>
                         </div>
-                        <a className="apply--btn" href={targetJob.apply}>apply now</a>
                         <p className="job__description">{targetJob.description}</p>
                     </div>
                     <div className="requirements">
@@ -99,10 +101,20 @@ const ListPage = () => {
                     </div>
                 </div>
 
+                <div className="footer">
+                    <div className="footer__content">
+                        <div className="sr__only job__summary">
+                            <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
+                            <p className="company__name list__title">{targetJob.company}</p>
+                        </div>
+
+                        <a href={targetJob.apply} className="apply--btn footer__apply--btn">apply now</a>
+
+                    </div>
+                </div>
+
             </main>
-            <footer className="footer">
-                <a href={targetJob.apply} className="apply--btn footer__apply--btn">apply now</a>
-            </footer>
+
         </div>
     )
 }

@@ -110,7 +110,7 @@ select {
 .theme-light .search__form {
   background-color: #1d222a;
 }
-.theme-light .list__card {
+.theme-light .list__card, .theme-light .footer {
   background-color: #1d222a;
   color: #19212e;
 }
@@ -134,7 +134,7 @@ select {
 .theme-dark .search__form {
   background-color: #1d222a;
 }
-.theme-dark .list__card {
+.theme-dark .list__card, .theme-dark .footer {
   background-color: #1d222a;
   color: white;
 }
@@ -607,21 +607,26 @@ select {
     left: 0%;
     top: 0;
     margin-left: 0px;
-    height: 8.75rem;
-    max-width: 8.75rem;
+    min-height: 8.75rem;
     position: relative;
-    flex: 1 1 30%;
+    flex: 1 1 22%;
     border-radius: 0;
   }
 }
 
 @media screen and (min-width: 42.5rem) {
+  .list__card__img {
+    transform: scale(2);
+  }
+}
+
+@media screen and (min-width: 42.5rem) {
   .company__details__splitter {
-    flex: 1 1 80%;
+    flex: 1 1 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 2rem;
+    margin: 0 2.9rem;
   }
 }
 
@@ -633,6 +638,7 @@ select {
   .list__card__holder {
     overflow: hidden;
     border-radius: 0 6px 6px 6px;
+    margin-top: -3rem;
   }
 }
 
@@ -663,19 +669,63 @@ select {
   margin-top: 2rem;
   margin-bottom: 3rem;
   border-radius: 6px;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 42.5rem) {
+  .details {
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 42.5rem) {
+  .card__details__more {
+    display: flex;
+    justify-items: center;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 42.5rem) {
+  .company__more {
+    flex: 1 1 70%;
+  }
 }
 
 .footer {
+  max-width: 69.375rem;
+  position: relative;
+  bottom: 0;
+  left: -1.5rem;
   background: white;
-  width: 100%;
+  width: 100vw;
   margin: auto;
-  border-radius: 5px;
-  margin-top: 3rem;
-  padding: 1rem 1rem 3rem;
+  border-radius: 5px 5px 0 0;
+  padding: 2.5rem 1rem 2.5rem;
 }
 .footer .footer__apply--btn {
-  margin: 2rem auto 0;
   width: 100%;
+}
+@media screen and (min-width: 42.5rem) {
+  .footer {
+    width: 100%;
+    left: 0;
+  }
+  .footer .footer__apply--btn {
+    flex: 1 1 30%;
+  }
+}
+
+@media screen and (min-width: 42.5rem) {
+  .footer__content {
+    display: flex;
+    align-items: center;
+    padding: 0rem 1.5rem;
+  }
+  .footer__content .job__summary {
+    position: relative;
+    flex: 1 1 70%;
+    height: auto;
+  }
 }
 
 .duration {
@@ -688,6 +738,17 @@ select {
 .list__title {
   font-size: 1.25rem;
   color: #1d222a;
+}
+@media screen and (min-width: 42.5rem) {
+  .card__title__listpage,
+.requirements__title,
+.list__title {
+    font-size: 1.5rem;
+  }
+}
+
+.website__name {
+  font-size: 1rem;
 }
 
 .company__location {
@@ -712,8 +773,14 @@ select {
 }
 .apply--btn:hover, .apply--btn:focus {
   cursor: pointer;
-  outline: dashed currentColor;
+  outline: dashed #5964E0;
   outline-offset: 0.25em;
+}
+@media screen and (min-width: 42.5rem) {
+  .apply--btn {
+    margin: auto;
+    padding: 1rem 2rem;
+  }
 }
 
 .job__require__item {
@@ -788,10 +855,15 @@ select {
   }
 }
 
+.list__main {
+  padding: 0.5rem 2.5rem 0;
+}
+
 body {
   background-color: #f3f5f7;
   color: #19212e;
   font-family: "Kumbh Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .text-primary {
