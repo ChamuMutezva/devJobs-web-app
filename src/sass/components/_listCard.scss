@@ -94,7 +94,7 @@
   }
 }
 .footer {
-  max-width: 69.375rem;
+ // max-width: 69.375rem;
   position: relative;
   bottom: 0;
   left: -1.5rem;
@@ -117,6 +117,8 @@
 }
 
 .footer__content {
+  max-width: 69.375rem;
+  margin: auto;
   @media screen and (min-width: 42.5rem) {
     display: flex;
     align-items: center;

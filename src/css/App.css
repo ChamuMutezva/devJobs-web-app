@@ -110,11 +110,13 @@ select {
 .theme-light .search__form {
   background-color: #1d222a;
 }
-.theme-light .list__card, .theme-light .footer {
+.theme-light .list__card,
+.theme-light .footer {
   background-color: #1d222a;
   color: #19212e;
 }
-.theme-light .card__title, .theme-light .list__title {
+.theme-light .card__title,
+.theme-light .list__title {
   color: #19212e;
 }
 
@@ -134,11 +136,13 @@ select {
 .theme-dark .search__form {
   background-color: #1d222a;
 }
-.theme-dark .list__card, .theme-dark .footer {
+.theme-dark .list__card,
+.theme-dark .footer {
   background-color: #1d222a;
   color: white;
 }
-.theme-dark .card__title, .theme-dark .list__title {
+.theme-dark .card__title,
+.theme-dark .list__title {
   color: white;
 }
 
@@ -414,13 +418,6 @@ select {
   width: 100%;
   border: 1px solid transparent;
   border-radius: 6px;
-  /*
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    outline: dashed currentColor;
-    outline-offset: 0.25em;
-  }*/
 }
 .input__search:hover, .input__search:focus {
   cursor: pointer;
@@ -434,14 +431,6 @@ select {
   }
 }
 
-.time__filter {
-  /* &:hover,
-  &:focus {
-    cursor: pointer;
-    outline: dashed currentColor;
-    outline-offset: 0.25em;
-  }*/
-}
 .time__filter:hover, .time__filter:focus {
   cursor: pointer;
   outline: dashed currentColor;
@@ -450,12 +439,6 @@ select {
 
 .input__search__loc {
   padding: 1.8rem 3rem;
-  /* &:hover,
-  &:focus {
-    cursor: pointer;
-    outline: dashed currentColor;
-    outline-offset: 0.25em;
-  }*/
 }
 .input__search__loc:hover, .input__search__loc:focus {
   cursor: pointer;
@@ -471,14 +454,6 @@ select {
   right: 1rem;
   top: 30%;
   border-radius: 6px;
-  /*
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      outline: dashed currentColor;
-      outline-offset: 0.25em;
-    }
-  */
 }
 .search--btn:hover, .search--btn:focus {
   cursor: pointer;
@@ -495,13 +470,6 @@ select {
   position: absolute;
   right: 6rem;
   top: 45%;
-  /*
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    outline: dashed currentColor;
-    outline-offset: 0.25em;
-  }*/
 }
 .open__options--btn:hover, .open__options--btn:focus {
   cursor: pointer;
@@ -523,7 +491,7 @@ select {
 }
 @media screen and (min-width: 42.5rem) {
   .input__label {
-    transform: translate(3rem, 2rem) scale(1);
+    transform: translate(2rem, 2rem) scale(1);
   }
 }
 
@@ -576,8 +544,9 @@ select {
 }
 @media screen and (min-width: 42.5rem) {
   .location__filter__time {
-    flex: 1 1 50%;
+    flex: 1 1 60%;
     border-top: none;
+    gap: 0.4rem;
     display: flex;
     align-items: center;
   }
@@ -589,6 +558,11 @@ select {
     border-left: 1px solid #f3f5f7;
     border-right: 1px solid #f3f5f7;
   }
+}
+
+.time__filter {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 @media screen and (min-width: 42.5rem) {
@@ -692,7 +666,6 @@ select {
 }
 
 .footer {
-  max-width: 69.375rem;
   position: relative;
   bottom: 0;
   left: -1.5rem;
@@ -715,6 +688,10 @@ select {
   }
 }
 
+.footer__content {
+  max-width: 69.375rem;
+  margin: auto;
+}
 @media screen and (min-width: 42.5rem) {
   .footer__content {
     display: flex;
@@ -839,7 +816,12 @@ select {
 @media screen and (min-width: 42.5rem) {
   .header {
     background-image: url("../../assets/tablet/bg-pattern-header.svg");
-    padding: 2.6rem 1.5rem 5.5rem;
+    padding: 5.5rem 1.5rem 5.5rem;
+  }
+}
+@media screen and (min-width: 42.5rem) {
+  .header {
+    background-image: url("../../assets/desktop/bg-pattern-header.svg");
   }
 }
 

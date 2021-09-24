@@ -3,9 +3,10 @@
   .#{$name} {
     background-color: $color;
     color: $secondary;
-    //.card {
-    // background-color: variables.$card-dk-bg;
-    //  }
+    
+    //.app__container {
+     //background-color: variables.$card-dk-bg;
+    // }
 
     .card__holder {
       background-color: variables.$card-dk-bg;
@@ -19,11 +20,13 @@
     .search__form {
       background-color: variables.$card-dk-bg;
     }
-    .list__card, .footer {
+    .list__card,
+    .footer {
       background-color: variables.$input-dk-bg;
       color: $secondary;
     }
-    .card__title, .list__title {
+    .card__title,
+    .list__title {
       color: $secondary;
     }
   }

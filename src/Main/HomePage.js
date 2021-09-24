@@ -78,7 +78,7 @@ const HomePage = () => {
 
     return (
         
-        <main className="main">
+        <main className="main home__main">
 
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
             <div className="search__form">
@@ -143,7 +143,7 @@ const HomePage = () => {
                 )}
             </ul>
 
-
+        <div className="overlay"></div>
         </main>
     )
 }

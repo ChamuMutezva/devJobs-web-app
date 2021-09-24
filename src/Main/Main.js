@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+/*import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from './HomePage'
 import ListPage from './ListPage'
 import { JobsProvider } from './JobsContext'
@@ -25,3 +25,4 @@ const Main = () => {
     )
 }
 export default Main
+*/

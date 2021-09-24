@@ -8,6 +8,9 @@
   padding: 2rem 1.5rem 4.5rem;
   @media screen and (min-width: 42.5rem)  {
     background-image: url("../../assets/tablet/bg-pattern-header.svg");
-    padding: 2.6rem 1.5rem 5.5rem;
+    padding: 5.5rem 1.5rem 5.5rem;
+  }
+  @media screen and (min-width: 42.5rem)  {
+    background-image: url("../../assets/desktop/bg-pattern-header.svg");
   }
 }

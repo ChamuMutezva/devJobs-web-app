@@ -9,6 +9,7 @@ const ListPage = () => {
     const [data] = useContext(JobsContext)
     const pathname = location.pathname.split("/")
     const lastitem = pathname[pathname.length - 1]
+
     const targetJob = data[lastitem - 1]
 
     const websiteArray = targetJob.website.split("/")
@@ -18,13 +19,16 @@ const ListPage = () => {
     console.log(pathname)
     console.log(lastitem)
     console.log(targetJob)
-
+    
     useEffect(() => {
-        console.log(targetJob)
-        if (targetJob === undefined) {
+        console.log(data)
+        if (data === undefined) {
             return <div>return to homepage</div>
+        } else {
+           
+        
         }
-    }, [targetJob])
+    }, [data])
 
 
 
@@ -101,19 +105,19 @@ const ListPage = () => {
                     </div>
                 </div>
 
-                <div className="footer">
-                    <div className="footer__content">
-                        <div className="sr__only job__summary">
-                            <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
-                            <p className="company__name list__title">{targetJob.company}</p>
-                        </div>
-
-                        <a href={targetJob.apply} className="apply--btn footer__apply--btn">apply now</a>
-
-                    </div>
-                </div>
-
             </main>
+
+            <footer className="footer">
+                <div className="footer__content">
+                    <div className="sr__only job__summary">
+                        <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
+                        <p className="company__name list__title">{targetJob.company}</p>
+                    </div>
+
+                    <a href={targetJob.apply} className="apply--btn footer__apply--btn">apply now</a>
+
+                </div>
+            </footer>
 
         </div>
     )
