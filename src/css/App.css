@@ -339,6 +339,7 @@ select {
 .card__title {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 
 .card__link {
@@ -346,8 +347,20 @@ select {
 }
 
 .card--location {
-  margin: 2rem auto 1rem;
+  display: inline-block;
+  margin: 1rem auto 1rem;
   font-weight: 700;
+  text-decoration: none;
+  color: #5964E0;
+}
+.card--location:hover, .card--location:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
+
+.search__hide {
+  display: none;
 }
 
 .search__form {
@@ -497,9 +510,6 @@ select {
 
 .input__label__search {
   transform: translate(3rem, 2rem) scale(1);
-  /* @media screen and (min-width: 42.5rem) {
-    transform: translate(3rem, 2rem) scale(1);
-  }*/
 }
 
 .input__container.active label {
@@ -617,7 +627,8 @@ select {
 }
 
 .company__website--btn {
-  background-color: #c9c9c9;
+  background-color: #6d7f97;
+  color: white;
   padding: 0.7rem 1.3rem;
   margin-top: 1rem;
   display: inline-block;
@@ -628,8 +639,9 @@ select {
 }
 .company__website--btn:hover, .company__website--btn:focus {
   cursor: pointer;
-  outline: dashed currentColor;
+  outline: dashed #6d7f97;
   outline-offset: 0.25em;
+  background-color: #a8b3c2;
 }
 
 .card__title__listpage {
@@ -689,7 +701,7 @@ select {
 }
 
 .footer__content {
-  max-width: 69.375rem;
+  max-width: 45.625rem;
   margin: auto;
 }
 @media screen and (min-width: 42.5rem) {
@@ -752,6 +764,7 @@ select {
   cursor: pointer;
   outline: dashed #5964E0;
   outline-offset: 0.25em;
+  background-color: #afb4f0;
 }
 @media screen and (min-width: 42.5rem) {
   .apply--btn {
@@ -808,9 +821,6 @@ select {
   background-image: url("../../assets/mobile/bg-pattern-header.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 2rem 1.5rem 4.5rem;
 }
 @media screen and (min-width: 42.5rem) {
@@ -819,10 +829,18 @@ select {
     padding: 5.5rem 1.5rem 5.5rem;
   }
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 69.375rem) {
   .header {
     background-image: url("../../assets/desktop/bg-pattern-header.svg");
+    padding: 5.5rem 10.3125rem 5.5rem;
   }
+}
+.header .header__container {
+  max-width: 69.375rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main {
@@ -839,6 +857,12 @@ select {
 
 .list__main {
   padding: 0.5rem 2.5rem 0;
+}
+@media screen and (min-width: 42.5rem) {
+  .list__main {
+    padding: 0.5rem 2.5rem;
+    max-width: 45.625rem;
+  }
 }
 
 body {

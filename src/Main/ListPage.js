@@ -6,7 +6,7 @@ import { JobsContext } from '../Context/JobsContext'
 const ListPage = () => {
     const location = useLocation()
 
-    const [data] = useContext(JobsContext)
+    const {data} = useContext(JobsContext)
     const pathname = location.pathname.split("/")
     const lastitem = pathname[pathname.length - 1]
 

@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:math";
 @use "../utils";
 
 .card__holder {
@@ -47,12 +49,26 @@
 .card__title {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 
 .card__link {
   text-decoration: none;
 }
 .card--location {
-  margin: 2rem auto 1rem;
+  display: inline-block;
+  margin: 1rem auto 1rem;
   font-weight: 700;
+  text-decoration: none;
+  color: utils.$blue-bg-color;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+}
+
+.search__hide {
+  display: none;
 }

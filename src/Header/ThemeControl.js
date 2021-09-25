@@ -5,9 +5,8 @@ import { ThemeContext } from '../Context/ThemeContext'
 
 const ThemeController = () => {
 
-    const [onChange] = useContext(ThemeContext)
-    console.log(onChange)
-
+    const { theme, onChange } = useContext(ThemeContext)
+    console.log(theme)
     return (
 
         <fieldset className="radio-switch">

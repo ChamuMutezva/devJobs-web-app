@@ -2,15 +2,21 @@
   background-image: url("../../assets/mobile/bg-pattern-header.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   padding: 2rem 1.5rem 4.5rem;
-  @media screen and (min-width: 42.5rem)  {
+  @media screen and (min-width: 42.5rem) {
     background-image: url("../../assets/tablet/bg-pattern-header.svg");
     padding: 5.5rem 1.5rem 5.5rem;
   }
-  @media screen and (min-width: 42.5rem)  {
+  @media screen and (min-width: 69.375rem) {
     background-image: url("../../assets/desktop/bg-pattern-header.svg");
+    padding: 5.5rem 10.3125rem 5.5rem;
+  }
+  .header__container {
+    max-width: 69.375rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

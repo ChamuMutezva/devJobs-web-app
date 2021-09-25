@@ -47,7 +47,7 @@ export const JobsProvider = props => {
     }
 
     return (
-        <JobsContext.Provider value={[data, setData, routeChange, findJob ]}>
+        <JobsContext.Provider value={{data, setData, routeChange, findJob }}>
             {props.children}
         </JobsContext.Provider>
     )

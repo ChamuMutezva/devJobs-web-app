@@ -4,25 +4,24 @@ export const ThemeContext = createContext()
 
 export const ThemeProvider = (props) => {
 
-     /* Get theme value from localStorage. */
-     const getThemeFromLocalStorage = () => {
+    /* Get theme value from localStorage. */
+    const getThemeFromLocalStorage = () => {
         return localStorage.getItem("globalTheme") === "true"
     }
 
     const [theme, setTheme] = useState(getThemeFromLocalStorage)
-  
+
     /* Post to localStorage user preferred theme. */
     const postThemeToLocalStorage = (newTheme) => {
         localStorage.setItem("globalTheme", newTheme)
     }
     /* Click handler */
-    const onChange = (evt) => {
-        console.log(evt.target)
+    const onChange = () => {
         postThemeToLocalStorage(!theme)
         setTheme(!theme)
     }
 
-     /* Trigger useEffect only on render */
+    /* Trigger useEffect only on render */
     /* Set theme state to saved theme in local storage */
     useEffect(() => {
         const main = document.querySelector(".app__container")
@@ -44,7 +43,7 @@ export const ThemeProvider = (props) => {
 
 
     return (
-        <ThemeContext.Provider value={[onChange]}>
+        <ThemeContext.Provider value={{ theme, onChange }}>
             {props.children}
         </ThemeContext.Provider>
     )

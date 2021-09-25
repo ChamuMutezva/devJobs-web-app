@@ -11,14 +11,15 @@ const HomePage = () => {
     const history = useHistory()
     //const value = useContext(JobsContext)    
     // const [data, setData] = useState([])
-    const [data] = useContext(JobsContext)
+    const { data } = useContext(JobsContext)
     const [press, setPress] = useState(false)
-  
+    // const [check, setCheck] = useState(false)
+
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
         const optionalSearch = document.querySelector('.optional__search')
         setPress(!press)
-        console.log(evt.target)
+        console.log(press)
         optionalSearch.classList.toggle("open__options")
     }
 
@@ -31,11 +32,6 @@ const HomePage = () => {
             btnPressed.setAttribute('aria-pressed', 'false')
         }
     })
-
-    //search by title function
-    const searchByTitle = (evt) => {
-        console.log(evt.target)
-    }
 
     // call the bindevents to 
     // set focus and blur on input elements
@@ -67,17 +63,84 @@ const HomePage = () => {
 
     const routeChange = (evt, id) => {
         evt.preventDefault()
-        history.push(`job/${id}`)       
-        console.log(id)
-        console.log(history)
+        history.push(`job/${id}`)
+
     }
 
     useEffect(() => {
         init()
     })
 
+    //search by title function
+    const searchByTitle = (evt) => {
+        const titleElement = document.querySelector(".title__filter")
+        const allCards = Array.from(document.querySelectorAll(".card__holder"))
+
+        data.map((item, index) => {
+            const card = item.position.toLowerCase().includes(titleElement.value.toLowerCase())
+            if (!card) {
+                return allCards[index].classList.add("search__hide")
+            } else {
+                return allCards[index].classList.remove("search__hide")
+            }
+
+        })
+
+    }
+
+    //search by location
+    const searchByLocation = () => {
+        const titleElement = document.querySelector(".input__search__loc")
+        const allCards = Array.from(document.querySelectorAll(".card__holder"))
+
+        data.map((item, index) => {
+            const card = item.location.toLowerCase().includes(titleElement.value.toLowerCase())
+            if (!card) {
+                return allCards[index].classList.add("search__hide")
+            } else {
+                return allCards[index].classList.remove("search__hide")
+            }
+
+        })
+       // openOptions()
+    }
+
+    // search by full time
+    const searchByContract = (elm) => {
+        // elm - input checkbox
+        const filterElement = document.querySelector(".span__contract")
+        const allCards = Array.from(document.querySelectorAll(".card__holder"))
+
+        data.map((item, index) => {
+            // compare if the item in the data (item.contract) includes 
+            // the item (in the card - the span holding the contract , 
+            // Full-time / Part time) that is being used to filter
+            const card = item.contract.toLowerCase().includes(filterElement.innerHTML.toLowerCase())
+            console.log(card)
+
+            // two conditions being checked
+            // 1. check if the checkbox input is checked 
+            // 1a. if checked go to second condition
+            // 2. check if card declared above  was false. If it was false then the card
+            // did not have the search filter (checkbox - checked) - hide the card not checked
+            // otherwise remove all hidden cards - checkbox not checked.
+            return elm.checked ? (card === false ?
+                allCards[index].classList.add("search__hide") :
+                allCards[index].classList.remove("search__hide")) :
+                allCards[index].classList.remove("search__hide")
+
+        })
+        openOptions()
+
+    }
+
+    const checkedChange = (evt) => {
+        console.log(evt.target.checked)
+        searchByContract(evt.target)
+    }
+
     return (
-        
+
         <main className="main home__main">
 
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
@@ -88,7 +151,8 @@ const HomePage = () => {
                     <input type="search"
                         name="title"
                         id="title__filter"
-                        className="input__search"
+                        className="input__search title__filter"
+
                     />
                     <button className="open__options--btn"
                         aria-pressed="false"
@@ -119,10 +183,11 @@ const HomePage = () => {
                             name="time"
                             id="time__filter"
                             className="time__filter"
+                            onChange={(evt) => { checkedChange(evt) }}
                         />
                         <label htmlFor="time__filter">Full time</label>
                     </div>
-                    <button className="full__search--btn">Search</button>
+                    <button className="full__search--btn" onClick={() => {searchByLocation()}}>Search</button>
                 </div>
             </div>
             <ul className="cards__list">
@@ -136,14 +201,14 @@ const HomePage = () => {
                             position={item.position}
                             company={item.company}
                             location={item.location}
-                            linkClicked={(evt) => {routeChange(evt, item.id)}}
-                          
+                            linkClicked={(evt) => { routeChange(evt, item.id) }}
+
                         />
                     </li>
                 )}
             </ul>
 
-        <div className="overlay"></div>
+            <div className="overlay"></div>
         </main>
     )
 }

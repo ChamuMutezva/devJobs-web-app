@@ -12,4 +12,8 @@
 
 .list__main {
     padding: 0.5rem 2.5rem 0;
+    @media screen and (min-width: 42.5rem) {
+        padding: .5rem 2.5rem;
+        max-width: 45.625rem;
+     }
 }
