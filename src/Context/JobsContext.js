@@ -25,27 +25,16 @@ export const JobsProvider = props => {
             }
         )
 
-            .then(function (response) {
-                console.log(response)
+            .then(function (response) {               
                 return response.data;
             })
 
-            .then(function (myJson) {
-                console.log(myJson);
+            .then(function (myJson) {               
                 setData(myJson)
             });
 
     }
-/*
-    const findJob = (id) => {
-        setData(data.find(job => job.id === id))
-    }
 
-    const routeChange = (evt, id) => {
-        evt.preventDefault()
-        history.push(`job/${id}`)
-    }
-*/
     return (
         <JobsContext.Provider value={{data }}>
             {props.children}

@@ -53,11 +53,18 @@ const ListPage = () => {
                         <div className="card__details__more">
                             <div className="company__more">
                                 <div className="duration">
+                                    <span className="sr__only">working hours</span>
                                     <span className="duration__hrs">{targetJob.postedAt}</span>
                                     <span className="span__contract">{targetJob.contract}</span>
                                 </div>
-                                <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
-                                <p className="company__location">{targetJob.location}</p>
+                                <h2 className="card__title card__title__listpage">
+                                    <span className="sr__only">position offered</span>
+                                    {targetJob.position}
+                                </h2>
+                                <p className="company__location">
+                                    <span className="sr__only">location</span>
+                                    {targetJob.location}
+                                </p>
                             </div>
                             <a className="apply--btn"
                                 href={targetJob.apply}

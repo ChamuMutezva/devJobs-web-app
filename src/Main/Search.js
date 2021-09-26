@@ -13,10 +13,7 @@ const SearchFilter = (props) => {
                 // const nav = document.querySelector(".nav")
                 const firstFocusableElement = focusedBtns[0]
                 const lastFocusableElement = focusedBtns[focusedBtns.length - 1]
-                console.log(firstFocusableElement)
-                console.log(lastFocusableElement)
-                // console.log(nav)
-
+               
                 document.addEventListener('keydown', function (e) {
                     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
