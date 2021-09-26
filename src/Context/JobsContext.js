@@ -36,7 +36,7 @@ export const JobsProvider = props => {
             });
 
     }
-
+/*
     const findJob = (id) => {
         setData(data.find(job => job.id === id))
     }
@@ -45,9 +45,9 @@ export const JobsProvider = props => {
         evt.preventDefault()
         history.push(`job/${id}`)
     }
-
+*/
     return (
-        <JobsContext.Provider value={{data, setData, routeChange, findJob }}>
+        <JobsContext.Provider value={{data }}>
             {props.children}
         </JobsContext.Provider>
     )
