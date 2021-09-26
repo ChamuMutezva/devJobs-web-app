@@ -5,6 +5,7 @@ import Card from './Card'
 import FilterBtn from '../assets/mobile/icon-filter.svg'
 import SearchBtn from '../assets/desktop/icon-search.svg'
 import LocationImg from '../assets/desktop/icon-location.svg'
+import SearchForm from './Search'
 
 const HomePage = () => {
     //useHistory hook - access to navigate to the listPage
@@ -13,55 +14,6 @@ const HomePage = () => {
     // const [data, setData] = useState([])
     const { data } = useContext(JobsContext)
     const [press, setPress] = useState(false)
-
-    const mediaQuery = window.matchMedia("(max-width: 679px)")
-    
-    // Tab trapping for screens with the modal box - up to 619px
-    function tabTrapper(e) {
-
-        console.log(mediaQuery)
-        // tab trapping elements
-        if (mediaQuery.matches) {
-            const focusedBtns = Array.from(document.querySelectorAll(".tab__action"))
-            // select modal list
-            if (focusedBtns.length > 0) {
-               // const nav = document.querySelector(".nav")
-                const firstFocusableElement = focusedBtns[0]
-                const lastFocusableElement = focusedBtns[focusedBtns.length - 1]
-                console.log(firstFocusableElement)
-                console.log(lastFocusableElement)
-               // console.log(nav)
-
-                document.addEventListener('keydown', function (e) {
-                    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-                    if (!isTabPressed) {
-                        return;
-                    }
-
-                    if (e.shiftKey) { // if shift key pressed for shift + tab combination
-                        if (document.activeElement === firstFocusableElement) {
-                            lastFocusableElement.focus(); // add focus for the last focusable element
-                            e.preventDefault();
-                        }
-                    } else { // if tab key is pressed
-                        if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-                            firstFocusableElement.focus(); // add focus for the first focusable element
-                            e.preventDefault();
-                        }
-                    }
-                });
-
-                firstFocusableElement.focus();
-            }
-        }
-
-        //**************************************************** */
-
-    }
-
-    mediaQuery.addListener(tabTrapper)
-    tabTrapper(mediaQuery)
 
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
@@ -120,9 +72,12 @@ const HomePage = () => {
     })
 
     //search by title function
-    const searchByTitle = (evt) => {
+    const searchByTitle = (elm) => {
         const titleElement = document.querySelector(".title__filter")
         const allCards = Array.from(document.querySelectorAll(".card__holder"))
+        
+      //  const targetElement = elm.type === "submit" ? elm : elm.closest("button")        
+       // to have one function for title and location search 
 
         data.map((item, index) => {
             const card = item.position.toLowerCase().includes(titleElement.value.toLowerCase())
@@ -137,10 +92,12 @@ const HomePage = () => {
     }
 
     //search by location
-    const searchByLocation = () => {
+    const searchByLocation = (elm) => {
         const titleElement = document.querySelector(".input__search__loc")
         const allCards = Array.from(document.querySelectorAll(".card__holder"))
-
+        const targetElement = elm.type === "submit" ? elm : elm.closest("button")       
+        console.log(targetElement)
+        
         data.map((item, index) => {
             const card = item.location.toLowerCase().includes(titleElement.value.toLowerCase())
             if (!card) {
@@ -150,7 +107,7 @@ const HomePage = () => {
             }
 
         })
-       // openOptions()
+        openOptions()
     }
 
     // search by full time
@@ -192,53 +149,15 @@ const HomePage = () => {
         <main className="main home__main">
 
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
-            <div className="search__form">
-                <div className="title__filter__holder input__container">
-                    <label htmlFor="title__filter"
-                        className="input__label">Filter by title</label>
-                    <input type="search"
-                        name="title"
-                        id="title__filter"
-                        className="input__search title__filter tab__action"
+            <SearchForm openOptions={openOptions}
+                FilterBtn={FilterBtn}
+                searchByTitle={(evt) => { searchByTitle(evt.target) }}
+                SearchBtn={SearchBtn}
+                LocationImg={LocationImg}
+                onChange={(evt) => { checkedChange(evt) }}
+                onClick={(evt) => { searchByLocation(evt.target) }}
+            />
 
-                    />
-                    <button className="open__options--btn tab__action"
-                        aria-pressed="false"
-                        onClick={openOptions}>
-                        <img src={FilterBtn} alt="toggle the filter options" />
-                    </button>
-                    <button className="search--btn tab__action" onClick={searchByTitle}>
-                        <img src={SearchBtn} className="search__img" alt="search filter using title" />
-                    </button>
-
-                </div>
-                <div className="optional__search">
-                    <div className="location__filter__holder input__container">
-                        <label
-                            htmlFor="location__filter"
-                            className="input__label input__label__search">
-                            Filter by location
-                        </label>
-                        <input type="search"
-                            name="location"
-                            id="location__filter"
-                            className="input__search input__search__loc tab__action"
-                        />
-                        <img src={LocationImg} alt="" className="location__img" />
-                    </div>
-                    <div className="location__filter__time">
-                        <input type="checkbox"
-                            name="time"
-                            id="time__filter"
-                            className="time__filter tab__action"
-                            onChange={(evt) => { checkedChange(evt) }}
-                        />
-                        <label htmlFor="time__filter">Full time</label>
-                    </div>
-                    <button className="full__search--btn tab__action" 
-                    onClick={() => {searchByLocation()}}>Search</button>
-                </div>
-            </div>
             <ul className="cards__list">
                 {Object.keys(data).length !== 0 && data.map((item) =>
                     <li className="card__holder" key={item.id}>
