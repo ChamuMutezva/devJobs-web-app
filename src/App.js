@@ -1,4 +1,3 @@
-//import { useContext } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { JobsProvider } from './Context/JobsContext'
 import { ThemeProvider } from './Context/ThemeContext';
@@ -10,9 +9,6 @@ import ListPage from './Main/ListPage';
 
 function App() {
 
- // const { theme } = useContext(ThemeContext)
- // console.log(theme)
-  //"app__container"
   return (
     <ThemeProvider>
       <div className={`app__container`}>

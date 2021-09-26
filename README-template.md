@@ -16,8 +16,6 @@ This is a solution to the [Devjobs web app challenge on Frontend Mentor](https:/
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -40,61 +38,115 @@ Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to t
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site URL:](https://devjobs-web-app.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
+- Javascript
+- Context Api
 - CSS Grid
+- Sass - mixins
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Getting data from a local json file [Fetch Data from a JSON File in a React App](https://app.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app)
+1. Getting data from a local json file [Fetch Data from a JSON File in a React App](https://app.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app).
+Place the json file and the assets in the public folder. Your Fetch API calls made from a React component always looks for files or any other relevant assets inside this public directory. Create-React-App doesn't put your assets automatically inside this directory during compilation so you have to do this manually. Method to fetch the data is shown below - just another api call. Pay attention to the fetch api call. The path to your JSON file should be either 'data.json' or './data.json'. Other relative paths might land you a 404 error while trying to access that resource. You also need to pass in some headers indicating the Content-Type and Accept as application/json to tell your client that you are trying to access and accept some JSON resource from a server.
 
-How to build a floating label input field [How to build a floating label input field](https://itnext.io/how-to-build-a-floating-label-input-field-f9b21669fe2f)
+```javascript
+const getData=()=>{
+    fetch('data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+      });
+  }
+  useEffect(()=>{
+    getData()
+  },[])
 
-Toggle switch design [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/)
+  ```
 
-Theme Switcher [A Theme Switcher](https://inclusive-components.design/a-theme-switcher/)
+2.How to build a floating label input field [How to build a floating label input field](https://itnext.io/how-to-build-a-floating-label-input-field-f9b21669fe2f)
 
-Passing data to sibling pages/components using Context Api video [React State Management Tutorial | Context Api | React Tutorial For Beginners](https://www.youtube.com/watch?v=35lXWvCuM8o)
+3.Toggle switch design [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/)
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+4.Theme Switcher [A Theme Switcher](https://inclusive-components.design/a-theme-switcher/)
 
-To see how you can add code snippets, see below:
+5.Passing data to sibling pages/components using Context Api video [React State Management Tutorial | Context Api | React Tutorial For Beginners](https://www.youtube.com/watch?v=35lXWvCuM8o)
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+- Share data among components to avoid props drilling - lifting up the state
+Two items will be exported.
+
+- 1. create a context component that holds the data (JobsContext, ThemeContext)
+
+- 2. place the data to be shared in the context components
+
+- 3. create a context provider in the context file `export const ThemeProvider`
+
+- 4. import `{useState and createContext}` from react
+
+- 5. to initiate the context `export const ThemeContext = createContext()`
+
+- 6. rendering the provider and the context
+
+ ```js
+return (
+        <ThemeContext.Provider value={{ theme, onChange }}>
+            {props.children}
+        </ThemeContext.Provider>
+    )
+    ```
+
+- consuming the context and provider `import { ThemeProvider } from './Context/ThemeContext';`
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+<ThemeProvider>
+      <div className={`app__container`}>
+        <Router>
+
+          <Header />
+          <Switch>
+            <JobsProvider>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+              <Route path="/:id">
+                <ListPage />
+              </Route>
+            </JobsProvider>
+          </Switch>
+
+        </Router>
+      </div>
+    </ThemeProvider>
+
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- 7. passing (using) the values to the children `import { useContext } from 'react'`
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- 8. `import { ThemeContext } from '../Context/ThemeContext'`, import in component that needs the logic of the context.
+
+- 9. destructure the data `const { theme, onChange } = useContext(ThemeContext)`
+
+- 10. use the destructured in your component
 
 ### Continued development
 
