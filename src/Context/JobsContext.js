@@ -1,12 +1,12 @@
 import { useState, createContext, useEffect } from 'react'
-import { useHistory } from 'react-router'
+//import { useHistory } from 'react-router'
 import axios from 'axios'
 
 export const JobsContext = createContext()
 
 
 export const JobsProvider = props => {
-    const history = useHistory()
+   // const history = useHistory()
 
     const [data, setData] = useState([])
     useEffect(() => {

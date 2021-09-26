@@ -6,6 +6,7 @@ import './sass/App.scss';
 import Header from './Header/Header.js'
 import HomePage from './Main/HomePage';
 import ListPage from './Main/ListPage';
+import NotFoundPage from './Main/NotFoundPage';
 
 function App() {
 
@@ -22,6 +23,9 @@ function App() {
               </Route>
               <Route path="/:id">
                 <ListPage />
+              </Route>
+              <Route path="*">
+                <NotFoundPage />
               </Route>
             </JobsProvider>
           </Switch>

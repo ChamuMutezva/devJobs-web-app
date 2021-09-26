@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { useLocation } from 'react-router'
 
 import { JobsContext } from '../Context/JobsContext'
@@ -6,30 +6,16 @@ import { JobsContext } from '../Context/JobsContext'
 const ListPage = () => {
     const location = useLocation()
 
-    const {data} = useContext(JobsContext)
+    const { data } = useContext(JobsContext)
     const pathname = location.pathname.split("/")
     const lastitem = pathname[pathname.length - 1]
-
+    if (typeof data === undefined) {
+        return <div>return to homepage</div>
+    }
     const targetJob = data[lastitem - 1]
 
     const websiteArray = targetJob.website.split("/")
     const websiteName = websiteArray[websiteArray.length - 1]
-    console.log(data)
-    console.log(websiteName)
-    console.log(pathname)
-    console.log(lastitem)
-    console.log(targetJob)
-    
-    useEffect(() => {
-        console.log(data)
-        if (data === undefined) {
-            return <div>return to homepage</div>
-        } else {
-           
-        
-        }
-    }, [data])
-
 
 
     return (
@@ -53,7 +39,10 @@ const ListPage = () => {
                                 <h2 className="company__name list__title">{targetJob.company}</h2>
                                 <p className="website__name">{websiteName}.com</p>
                             </div>
-                            <a className="company__website--btn" href={targetJob.website}>Company Site</a>
+                            <a className="company__website--btn"
+                                href={targetJob.website}
+                                target="_blank"
+                                rel="noreferrer">Company Site</a>
                         </div>
 
                     </div>
@@ -70,7 +59,10 @@ const ListPage = () => {
                                 <h2 className="card__title card__title__listpage">{targetJob.position}</h2>
                                 <p className="company__location">{targetJob.location}</p>
                             </div>
-                            <a className="apply--btn" href={targetJob.apply}>apply now</a>
+                            <a className="apply--btn"
+                                href={targetJob.apply}
+                                target="_blank"
+                                rel="noreferrer">apply now</a>
                         </div>
                         <p className="job__description">{targetJob.description}</p>
                     </div>
