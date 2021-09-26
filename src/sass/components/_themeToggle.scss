@@ -14,7 +14,7 @@
     radio button groups often benefit from a legend to
     provide context as to what the different
     options pertain to. Ideally this would be visible to all
-    users, but you know...
+    users.
   */
 .radio-switch legend {
   font-size: 2px;
@@ -73,6 +73,7 @@
     But you'll never be in IE11, so we're going to need a
     polyfill for you for a bit...
    */
+
 .radio-switch:focus-within label:first-of-type:after {
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3; 
 }
@@ -85,7 +86,7 @@
 /* making the switch UI.  */
 .radio-switch label:first-of-type:before,
 .radio-switch label:first-of-type:after {
-  border: 1px solid #aaa;
+  border: 1px solid transparent;
   content: "";
   height: 1.8em;
   overflow: hidden;
@@ -96,13 +97,15 @@
 
 .radio-switch label:first-of-type:before {
   background: #5964e0;
-  border: 1px solid #aaa;
+  border: 1px solid transparent;
   border-radius: 100%;
   position: absolute;
-  right: -0.075em;
+  right: 0.35em;
+  top: 0.45em;
   transform: translateX(0em);
   transition: transform 0.2s ease-in-out;
-  width: 2em;
+  width: 1em;
+  height: 1em;
   z-index: 2;
 }
 
@@ -125,7 +128,7 @@
 }
 
 .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
-  transform: translateX(-2em);
+  transform: translateX(-2.3em);
 }
 
 /* Move the 2nd label to have a lower z-index, so when that
