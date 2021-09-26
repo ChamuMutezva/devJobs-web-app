@@ -49,7 +49,7 @@
   }
 }
 .company__website--btn {
-  background-color: utils.$med-grey;
+  background-color: utils.$light-grey-text;
   color: utils.$light-text;
   padding: 0.7rem 1.3rem;
   margin-top: 1rem;
@@ -63,7 +63,7 @@
     cursor: pointer;
     outline: dashed utils.$med-grey;
     outline-offset: 0.25em;
-    background-color: lighten(utils.$med-grey, 20%);
+    background-color: darken(utils.$light-grey-text, 20%);
   }
 }
 

@@ -51,22 +51,25 @@
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-
-.card__link {
-  text-decoration: none;
-}
-.card--location {
+.card--link {
   display: inline-block;
-  margin: 1rem auto 1rem;
-  font-weight: 700;
   text-decoration: none;
-  color: utils.$blue-bg-color;
+  color: utils.$card-dk-bg;
   &:hover,
   &:focus {
     cursor: pointer;
-    outline: dashed currentColor;
-    outline-offset: 0.25em;
+    outline: dashed utils.$blue-bg-color;
+    outline-offset: -0.25em;
+    color: lighten(utils.$card-dk-bg, 40%);
   }
+}
+.card--location {
+  
+  margin: 1rem auto 1rem;
+  font-weight: 700;
+ // text-decoration: none;
+  color: utils.$blue-bg-color;
+ 
 }
 
 .search__hide {

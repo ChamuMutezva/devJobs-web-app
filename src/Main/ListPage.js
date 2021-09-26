@@ -106,7 +106,10 @@ const ListPage = () => {
                         <p className="company__name list__title">{targetJob.company}</p>
                     </div>
 
-                    <a href={targetJob.apply} className="apply--btn footer__apply--btn">apply now</a>
+                    <a href={targetJob.apply}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="apply--btn footer__apply--btn">apply now</a>
 
                 </div>
             </footer>

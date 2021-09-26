@@ -153,6 +153,7 @@
     cursor: pointer;
     outline: dashed utils.$blue-bg-color;
     outline-offset: 0.25em;
+    background-color: lighten(utils.$blue-bg-color, 20%);
   }
 
   @media screen and (min-width: 42.5rem) {
@@ -160,6 +161,10 @@
     right: 0;
     max-width: 5.25rem;
     margin: 1rem;
+  }
+
+  @media screen and (min-width: 69.375rem) {
+    max-width: 10.5rem;
   }
 }
 

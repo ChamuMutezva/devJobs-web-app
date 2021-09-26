@@ -97,7 +97,7 @@ const SearchFilter = (props) => {
                             className="time__filter tab__action"
                             onChange={props.onChange}
                         />
-                        <label htmlFor="time__filter">Full time</label>
+                        <label htmlFor="time__filter">Full time only</label>
                     </div>
                     <button className="full__search--btn tab__action"
                         onClick={props.onClick}>Search</button>
