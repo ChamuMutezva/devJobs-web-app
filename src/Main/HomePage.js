@@ -14,6 +14,9 @@ const HomePage = () => {
     // const [data, setData] = useState([])
     const { data } = useContext(JobsContext)
     const [press, setPress] = useState(false)
+    const [title, setTitle] = useState("")
+    const [loc, setLoc] = useState("")
+    const [check, setCheck] = useState(false)
 
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
@@ -75,9 +78,13 @@ const HomePage = () => {
     const searchByTitle = (elm) => {
         const titleElement = document.querySelector(".title__filter")
         const allCards = Array.from(document.querySelectorAll(".card__holder"))
-        
-      //  const targetElement = elm.type === "submit" ? elm : elm.closest("button")        
-       // to have one function for title and location search 
+        // console.log(elm)
+        // const targetElement = elm.type === "submit" ? elm : elm.closest("button")   
+        // console.log(targetElement)     
+        // TODO: have one function for title and location search 
+        setLoc("")
+        setCheck(false)
+        setTitle(titleElement.value)
 
         data.map((item, index) => {
             const card = item.position.toLowerCase().includes(titleElement.value.toLowerCase())
@@ -93,13 +100,16 @@ const HomePage = () => {
 
     //search by location
     const searchByLocation = (elm) => {
-        const titleElement = document.querySelector(".input__search__loc")
+        const locElement = document.querySelector(".input__search__loc")
         const allCards = Array.from(document.querySelectorAll(".card__holder"))
-        const targetElement = elm.type === "submit" ? elm : elm.closest("button")       
-        console.log(targetElement)
-        
+        // const targetElement = elm.type === "submit" ? elm : elm.closest("button")
+        //  console.log(targetElement)
+        setTitle("")
+        setCheck(false)
+        setLoc(locElement.value)
+
         data.map((item, index) => {
-            const card = item.location.toLowerCase().includes(titleElement.value.toLowerCase())
+            const card = item.location.toLowerCase().includes(locElement.value.toLowerCase())
             if (!card) {
                 return allCards[index].classList.add("search__hide")
             } else {
@@ -115,33 +125,45 @@ const HomePage = () => {
         // elm - input checkbox
         const filterElement = document.querySelector(".span__contract")
         const allCards = Array.from(document.querySelectorAll(".card__holder"))
+        console.log(elm)
+        setTitle("")
+        setLoc("")
+        setCheck(elm.checked)
+        
+            data.map((item, index) => {
+                // compare if the item in the data (item.contract) includes 
+                // the item (in the card - the span holding the contract , 
+                // Full-time / Part time) that is being used to filter
+                const card = item.contract.toLowerCase().includes(filterElement.innerHTML.toLowerCase())
+                console.log(card)
 
-        data.map((item, index) => {
-            // compare if the item in the data (item.contract) includes 
-            // the item (in the card - the span holding the contract , 
-            // Full-time / Part time) that is being used to filter
-            const card = item.contract.toLowerCase().includes(filterElement.innerHTML.toLowerCase())
-            console.log(card)
+                // two conditions being checked
+                // 1. check if the checkbox input is checked 
+                // 1a. if checked go to second condition
+                // 2. check if card declared above  was false. If it was false then the card
+                // did not have the search filter (checkbox - checked) - hide the card not checked
+                // otherwise remove all hidden cards - checkbox not checked.
+                return elm.checked ? (card === false ?
+                    allCards[index].classList.add("search__hide") :
+                    allCards[index].classList.remove("search__hide")) :
+                    allCards[index].classList.remove("search__hide")
 
-            // two conditions being checked
-            // 1. check if the checkbox input is checked 
-            // 1a. if checked go to second condition
-            // 2. check if card declared above  was false. If it was false then the card
-            // did not have the search filter (checkbox - checked) - hide the card not checked
-            // otherwise remove all hidden cards - checkbox not checked.
-            return elm.checked ? (card === false ?
-                allCards[index].classList.add("search__hide") :
-                allCards[index].classList.remove("search__hide")) :
-                allCards[index].classList.remove("search__hide")
-
-        })
+            })
+        
         openOptions()
 
     }
 
     const checkedChange = (evt) => {
         console.log(evt.target.checked)
+        setCheck(evt.target.checked)
         searchByContract(evt.target)
+    }
+    const titleChange = (evt) => {
+        setTitle(evt.target.value)
+    }
+    const locChange = (evt) => {
+        setLoc(evt.target.value)
     }
 
     return (
@@ -149,12 +171,18 @@ const HomePage = () => {
         <main className="main home__main">
 
             <h1 className="sr__only"> devjobs, your one stop site for developer jobs </h1>
-            <SearchForm openOptions={openOptions}
+            <SearchForm
+                openOptions={openOptions}
                 FilterBtn={FilterBtn}
                 searchByTitle={(evt) => { searchByTitle(evt.target) }}
+                titleValue={title}
+                locationValue={loc}
                 SearchBtn={SearchBtn}
                 LocationImg={LocationImg}
+                titleChange={(evt) => { titleChange(evt) }}
+                locChange={(evt) => { locChange(evt) }}
                 onChange={(evt) => { checkedChange(evt) }}
+                check={check}
                 onClick={(evt) => { searchByLocation(evt.target) }}
             />
 
