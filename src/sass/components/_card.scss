@@ -3,8 +3,7 @@
 @use "../utils";
 
 .card__holder {
-  border-radius: 6px;
-  //	overflow: hidden;
+  border-radius: 6px; 
   background-color: utils.$white-bg;
 }
 .card {
@@ -64,11 +63,10 @@
     color: lighten(utils.$card-dk-bg, 40%);
   }
 }
-.card--location {
-  
+
+.card--location {  
   margin: 1rem auto 1rem;
   font-weight: 700;
- // text-decoration: none;
   color: utils.$blue-bg-color;
  
 }

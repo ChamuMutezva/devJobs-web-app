@@ -1,8 +1,10 @@
 @use "../utils";
+
 .duration {
   color: utils.$med-grey;
   font-size: 1rem;
 }
+
 .card__title__listpage,
 .requirements__title,
 .list__title {
@@ -39,7 +41,7 @@
   &:hover,
   &:focus {
     cursor: pointer;
-    outline: dashed  utils.$blue-bg-color;
+    outline: dashed utils.$blue-bg-color;
     outline-offset: 0.25em;
     background-color: lighten(utils.$blue-bg-color, 20%);
   }

@@ -16,7 +16,6 @@
     top: 0;
     margin-left: 0px;
     min-height: 8.75rem;
-    // max-width: 8.75rem;
     position: relative;
     flex: 1 1 22%;
     border-radius: 0;
@@ -97,7 +96,6 @@
   }
 }
 .footer {
- // max-width: 69.375rem;
   position: relative;
   bottom: 0;
   left: -1.5rem;
@@ -105,11 +103,12 @@
   width: 100vw;
   margin: auto;
   border-radius: 5px 5px 0 0;
-  // margin-top: 3rem;
   padding: 2.5rem 1rem 2.5rem;
+
   .footer__apply--btn {
     width: 100%;
   }
+  
   @media screen and (min-width: 42.5rem) {
     width: 100%;
     left: 0;
