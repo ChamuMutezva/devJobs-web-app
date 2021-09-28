@@ -1,28 +1,36 @@
-@use '../utils';
+@use "../utils";
 
 .main {
-    padding: .5rem 1.5rem;
-    margin: auto;
-    max-width: 69.375rem;
-    position: relative;
-    @media screen and (min-width: 42.5rem) {
-        padding: .5rem 2.5rem;
-     }
+  padding: 0.5rem 1.5rem;
+  margin: auto;
+  max-width: 69.375rem;
+  position: relative;
+  @media screen and (min-width: 42.5rem) {
+    padding: 0.5rem 2.5rem;
+  }
 }
 
 .list__main {
-    padding: 0.5rem 2.5rem 0;
-    @media screen and (min-width: 42.5rem) {
-        padding: .5rem 2.5rem;
-        max-width: 45.625rem;
-     }
+  padding: 0.5rem 2.5rem 0;
+  @media screen and (min-width: 42.5rem) {
+    padding: 0.5rem 2.5rem;
+    max-width: 45.625rem;
+  }
 }
-/*
+
 .overlay {
-	width: 100%;
-	min-height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: brown;
-}*/
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f4f6f8;
+  opacity: 0.5;
+  z-index: 1;
+  @media screen and (min-width: 42.5rem) {
+    display: none;
+  }
+}
+.overlay__hide {
+  display: none;
+}

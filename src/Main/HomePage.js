@@ -21,9 +21,11 @@ const HomePage = () => {
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
         const optionalSearch = document.querySelector('.optional__search')
+        const overlay = document.querySelector(".overlay")
         setPress(!press)
         console.log(press)
         optionalSearch.classList.toggle("open__options")
+        press ? overlay.classList.add("overlay__hide") : overlay.classList.remove("overlay__hide")
     }
 
     //set aria-pressed attribute on open__options--btn toggle 
@@ -96,6 +98,7 @@ const HomePage = () => {
 
         })
 
+
     }
 
     //search by location
@@ -129,27 +132,27 @@ const HomePage = () => {
         setTitle("")
         setLoc("")
         setCheck(elm.checked)
-        
-            data.map((item, index) => {
-                // compare if the item in the data (item.contract) includes 
-                // the item (in the card - the span holding the contract , 
-                // Full-time / Part time) that is being used to filter
-                const card = item.contract.toLowerCase().includes(filterElement.innerHTML.toLowerCase())
-                console.log(card)
 
-                // two conditions being checked
-                // 1. check if the checkbox input is checked 
-                // 1a. if checked go to second condition
-                // 2. check if card declared above  was false. If it was false then the card
-                // did not have the search filter (checkbox - checked) - hide the card not checked
-                // otherwise remove all hidden cards - checkbox not checked.
-                return elm.checked ? (card === false ?
-                    allCards[index].classList.add("search__hide") :
-                    allCards[index].classList.remove("search__hide")) :
-                    allCards[index].classList.remove("search__hide")
+        data.map((item, index) => {
+            // compare if the item in the data (item.contract) includes 
+            // the item (in the card - the span holding the contract , 
+            // Full-time / Part time) that is being used to filter
+            const card = item.contract.toLowerCase().includes(filterElement.innerHTML.toLowerCase())
+            console.log(card)
 
-            })
-        
+            // two conditions being checked
+            // 1. check if the checkbox input is checked 
+            // 1a. if checked go to second condition
+            // 2. check if card declared above  was false. If it was false then the card
+            // did not have the search filter (checkbox - checked) - hide the card not checked
+            // otherwise remove all hidden cards - checkbox not checked.
+            return elm.checked ? (card === false ?
+                allCards[index].classList.add("search__hide") :
+                allCards[index].classList.remove("search__hide")) :
+                allCards[index].classList.remove("search__hide")
+
+        })
+
         openOptions()
 
     }
@@ -204,7 +207,7 @@ const HomePage = () => {
                 )}
             </ul>
 
-            <div className="overlay"></div>
+            <div className="overlay overlay__hide"></div>
         </main>
     )
 }

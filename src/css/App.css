@@ -342,6 +342,7 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  padding: 0.5rem;
 }
 
 .card--link {
@@ -370,6 +371,7 @@ select {
   position: relative;
   top: -3rem;
   border-radius: 6px;
+  z-index: 2;
 }
 @media screen and (min-width: 42.5rem) {
   .search__form {
@@ -872,6 +874,26 @@ select {
     padding: 0.5rem 2.5rem;
     max-width: 45.625rem;
   }
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f4f6f8;
+  opacity: 0.5;
+  z-index: 1;
+}
+@media screen and (min-width: 42.5rem) {
+  .overlay {
+    display: none;
+  }
+}
+
+.overlay__hide {
+  display: none;
 }
 
 body {
