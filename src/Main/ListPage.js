@@ -7,14 +7,14 @@ const ListPage = () => {
     const location = useLocation()
 
     const { data } = useContext(JobsContext)
-    const pathname = location.pathname.split("/")
+    const pathname = location.pathname.split('/')
     const lastitem = pathname[pathname.length - 1]
     if (typeof data === undefined) {
         return <div>return to homepage</div>
     }
     const targetJob = data[lastitem - 1]
 
-    const websiteArray = targetJob.website.split("/")
+    const websiteArray = targetJob.website.split('/')
     const websiteName = websiteArray[websiteArray.length - 1]
 
 

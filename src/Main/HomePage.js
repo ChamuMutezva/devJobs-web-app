@@ -21,11 +21,11 @@ const HomePage = () => {
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
         const optionalSearch = document.querySelector('.optional__search')
-        const overlay = document.querySelector(".overlay")
+        const overlay = document.querySelector('.overlay')
         setPress(!press)
         console.log(press)
-        optionalSearch.classList.toggle("open__options")
-        press ? overlay.classList.add("overlay__hide") : overlay.classList.remove("overlay__hide")
+        optionalSearch.classList.toggle('open__options')
+        press ? overlay.classList.add('overlay__hide') : overlay.classList.remove('overlay__hide')
     }
 
     //set aria-pressed attribute on open__options--btn toggle 
@@ -78,22 +78,21 @@ const HomePage = () => {
 
     //search by title function
     const searchByTitle = (elm) => {
-        const titleElement = document.querySelector(".title__filter")
-        const allCards = Array.from(document.querySelectorAll(".card__holder"))
-        // console.log(elm)
-        // const targetElement = elm.type === "submit" ? elm : elm.closest("button")   
-        // console.log(targetElement)     
+        const titleElement = document.querySelector('.title__filter')
+        const allCards = Array.from(document.querySelectorAll('.card__holder'))
+        
+        // const targetElement = elm.type === "submit" ? elm : elm.closest("button")               
         // TODO: have one function for title and location search 
-        setLoc("")
+        setLoc('')
         setCheck(false)
         setTitle(titleElement.value)
 
         data.map((item, index) => {
             const card = item.position.toLowerCase().includes(titleElement.value.toLowerCase())
             if (!card) {
-                return allCards[index].classList.add("search__hide")
+                return allCards[index].classList.add('search__hide')
             } else {
-                return allCards[index].classList.remove("search__hide")
+                return allCards[index].classList.remove('search__hide')
             }
 
         })
@@ -103,20 +102,20 @@ const HomePage = () => {
 
     //search by location
     const searchByLocation = (elm) => {
-        const locElement = document.querySelector(".input__search__loc")
-        const allCards = Array.from(document.querySelectorAll(".card__holder"))
+        const locElement = document.querySelector('.input__search__loc')
+        const allCards = Array.from(document.querySelectorAll('.card__holder'))
         // const targetElement = elm.type === "submit" ? elm : elm.closest("button")
         //  console.log(targetElement)
-        setTitle("")
+        setTitle('')
         setCheck(false)
         setLoc(locElement.value)
 
         data.map((item, index) => {
             const card = item.location.toLowerCase().includes(locElement.value.toLowerCase())
             if (!card) {
-                return allCards[index].classList.add("search__hide")
+                return allCards[index].classList.add('search__hide')
             } else {
-                return allCards[index].classList.remove("search__hide")
+                return allCards[index].classList.remove('search__hide')
             }
 
         })
@@ -126,11 +125,11 @@ const HomePage = () => {
     // search by full time
     const searchByContract = (elm) => {
         // elm - input checkbox
-        const filterElement = document.querySelector(".span__contract")
-        const allCards = Array.from(document.querySelectorAll(".card__holder"))
+        const filterElement = document.querySelector('.span__contract')
+        const allCards = Array.from(document.querySelectorAll('.card__holder'))
         console.log(elm)
-        setTitle("")
-        setLoc("")
+        setTitle('')
+        setLoc('')
         setCheck(elm.checked)
 
         data.map((item, index) => {
@@ -147,9 +146,9 @@ const HomePage = () => {
             // did not have the search filter (checkbox - checked) - hide the card not checked
             // otherwise remove all hidden cards - checkbox not checked.
             return elm.checked ? (card === false ?
-                allCards[index].classList.add("search__hide") :
-                allCards[index].classList.remove("search__hide")) :
-                allCards[index].classList.remove("search__hide")
+                allCards[index].classList.add('search__hide') :
+                allCards[index].classList.remove('search__hide')) :
+                allCards[index].classList.remove('search__hide')
 
         })
 
@@ -208,6 +207,7 @@ const HomePage = () => {
             </ul>
 
             <div className="overlay overlay__hide"></div>
+           
         </main>
     )
 }

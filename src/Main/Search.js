@@ -1,5 +1,5 @@
 const SearchFilter = (props) => {
-    const mediaQuery = window.matchMedia("(max-width: 679px)")
+    const mediaQuery = window.matchMedia('(max-width: 679px)')
 
     // Tab trapping for screens with the modal box - up to 619px
     function tabTrapper(e) {
@@ -7,7 +7,7 @@ const SearchFilter = (props) => {
         console.log(mediaQuery)
         // tab trapping elements
         if (mediaQuery.matches) {
-            const focusedBtns = Array.from(document.querySelectorAll(".tab__action"))
+            const focusedBtns = Array.from(document.querySelectorAll('.tab__action'))
             // select modal list
             if (focusedBtns.length > 0) {
                 // const nav = document.querySelector(".nav")

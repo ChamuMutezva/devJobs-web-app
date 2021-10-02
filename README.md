@@ -53,7 +53,17 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Sass - mixins
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- created using `create-react-app` [React](https://reactjs.org/) - JS library
+
+### Installation
+
+The project can be installed by using the guidelines below
+
+- select code on this page on github
+- select https on the modal that opens and copy the link below that
+- open the folder where you want to clone the project
+- open a terminal and type `git clone` and paste the link copied above and press enter
+- when files and folders has been copied run `npm install` at the root of the project to install dependencies used in the project
 
 ### What I learned
 

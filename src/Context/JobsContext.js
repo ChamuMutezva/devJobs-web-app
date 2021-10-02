@@ -6,7 +6,7 @@ export const JobsContext = createContext()
 
 
 export const JobsProvider = props => {
-   // const history = useHistory()
+    // const history = useHistory()
 
     const [data, setData] = useState([])
     useEffect(() => {
@@ -15,9 +15,9 @@ export const JobsProvider = props => {
     //get data from json api
     const getData = async () => {
 
-        await axios.get('data.json'
+        await axios.get('data.json?page=0&limit=10',
 
-            , {
+            {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -25,18 +25,18 @@ export const JobsProvider = props => {
             }
         )
 
-            .then(function (response) {               
+            .then(function (response) {
                 return response.data;
             })
 
-            .then(function (myJson) {               
+            .then(function (myJson) {
                 setData(myJson)
             });
 
     }
 
     return (
-        <JobsContext.Provider value={{data }}>
+        <JobsContext.Provider value={{ data }}>
             {props.children}
         </JobsContext.Provider>
     )
