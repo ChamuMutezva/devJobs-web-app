@@ -848,13 +848,13 @@ select {
 @media screen and (min-width: 47.5rem) {
   .header {
     background-image: url("../../assets/tablet/bg-pattern-header.svg");
-    padding: 5.5rem 1.5rem 5.5rem;
+    padding: 3rem 1.5rem 5.5rem;
   }
 }
 @media screen and (min-width: 69.375rem) {
   .header {
     background-image: url("../../assets/desktop/bg-pattern-header.svg");
-    padding: 5.5rem 10.3125rem 5.5rem;
+    padding: 3rem 10.3125rem 5.5rem;
   }
 }
 .header .header__container {
