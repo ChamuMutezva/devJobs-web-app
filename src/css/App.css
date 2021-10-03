@@ -116,7 +116,8 @@ select {
   color: #19212e;
 }
 .theme-light .card__title,
-.theme-light .list__title {
+.theme-light .list__title,
+.theme-light .card--link {
   color: #19212e;
 }
 
@@ -142,7 +143,8 @@ select {
   color: white;
 }
 .theme-dark .card__title,
-.theme-dark .list__title {
+.theme-dark .list__title,
+.theme-dark .card--link {
   color: white;
 }
 
@@ -342,13 +344,13 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  padding: 0.5rem;
 }
 
 .card--link {
   display: inline-block;
   text-decoration: none;
   color: #1d222a;
+  padding: 0.5rem;
 }
 .card--link:hover, .card--link:focus {
   cursor: pointer;

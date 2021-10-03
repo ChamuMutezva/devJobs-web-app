@@ -10,8 +10,6 @@ import SearchForm from './Search'
 const HomePage = () => {
     //useHistory hook - access to navigate to the listPage
     const history = useHistory()
-    //const value = useContext(JobsContext)    
-    // const [data, setData] = useState([])
     const { data } = useContext(JobsContext)
     const [press, setPress] = useState(false)
     const [title, setTitle] = useState("")
@@ -20,39 +18,8 @@ const HomePage = () => {
 
     //open/toggle the other filter options - location and time filters
     const openOptions = (evt) => {
-        const optionalSearch = document.querySelector('.optional__search')
-        const overlay = document.querySelector('.overlay')
         setPress(!press)
-        console.log(press)
-        optionalSearch.classList.toggle('open__options')
-        press ? overlay.classList.add('overlay__hide') : overlay.classList.remove('overlay__hide')
     }
-
-    //set aria-pressed attribute on open__options--btn toggle 
-    useEffect(() => {
-        const btnPressed = document.querySelector('.open__options--btn')
-        if (press) {
-            btnPressed.setAttribute('aria-pressed', 'true')
-        } else {
-            btnPressed.setAttribute('aria-pressed', 'false')
-        }
-    })
-
-    // call the bindevents to 
-    // set focus and blur on input elements
-    const init = () => {
-        const inputContainer = document.querySelectorAll('.input__container');
-        inputContainer.forEach((element) => {
-            bindEvents(element);
-        });
-    };
-
-    // set focus and blur on input elements
-    const bindEvents = (element) => {
-        const inputSearch = element.querySelector('input');
-        inputSearch.addEventListener('focus', handleFocus);
-        inputSearch.addEventListener('blur', handleBlur);
-    };
 
     const handleFocus = (e) => {
         const target = e.target;
@@ -72,15 +39,11 @@ const HomePage = () => {
 
     }
 
-    useEffect(() => {
-        init()
-    })
-
     //search by title function
     const searchByTitle = (elm) => {
         const titleElement = document.querySelector('.title__filter')
         const allCards = Array.from(document.querySelectorAll('.card__holder'))
-        
+
         // const targetElement = elm.type === "submit" ? elm : elm.closest("button")               
         // TODO: have one function for title and location search 
         setLoc('')
@@ -96,22 +59,25 @@ const HomePage = () => {
             }
 
         })
-
-
+        
     }
 
     //search by location
-    const searchByLocation = (elm) => {
+    const searchByLocation = () => {
         const locElement = document.querySelector('.input__search__loc')
-        const allCards = Array.from(document.querySelectorAll('.card__holder'))
-        // const targetElement = elm.type === "submit" ? elm : elm.closest("button")
-        //  console.log(targetElement)
+        // const allCards = Array.from(document.querySelectorAll('.card__holder'))
         setTitle('')
         setCheck(false)
         setLoc(locElement.value)
+        displaySearch()
+        openOptions()
+    }
 
+    const displaySearch = (target) => {
+        const allCards = Array.from(document.querySelectorAll('.card__holder'))
+        target = document.querySelector('.input__search__loc')
         data.map((item, index) => {
-            const card = item.location.toLowerCase().includes(locElement.value.toLowerCase())
+            const card = item.location.toLowerCase().includes(target.value.toLowerCase())
             if (!card) {
                 return allCards[index].classList.add('search__hide')
             } else {
@@ -119,7 +85,6 @@ const HomePage = () => {
             }
 
         })
-        openOptions()
     }
 
     // search by full time
@@ -184,7 +149,11 @@ const HomePage = () => {
                 titleChange={(evt) => { titleChange(evt) }}
                 locChange={(evt) => { locChange(evt) }}
                 onChange={(evt) => { checkedChange(evt) }}
+                focus={(evt) => { handleFocus(evt) }}
+                blur={(evt) => { handleBlur(evt) }}
                 check={check}
+                press={press}
+
                 onClick={(evt) => { searchByLocation(evt.target) }}
             />
 
@@ -206,8 +175,7 @@ const HomePage = () => {
                 )}
             </ul>
 
-            <div className="overlay overlay__hide"></div>
-           
+            <div className={`overlay ${!press ? 'overlay__hide' : ''}`}></div>
         </main>
     )
 }

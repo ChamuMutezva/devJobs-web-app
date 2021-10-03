@@ -7,7 +7,12 @@ const Header = () => {
     const svgHeader = React.createRef()
 
     useEffect(() => {
-        gsap.to(svgHeader.current, { color: "red", duration: 2 , y: 20})
+        gsap.from(svgHeader.current, {
+            color: 'red', duration: 2,
+            y: -20,
+            opacity: 0,
+            ease: 'elastic'
+        })
     }, [svgHeader])
     return (
         <header className="header">

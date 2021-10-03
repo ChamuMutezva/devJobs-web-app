@@ -3,9 +3,9 @@
   .#{$name} {
     background-color: $color;
     color: $secondary;
-    
+
     //.app__container {
-     //background-color: variables.$card-dk-bg;
+    //background-color: variables.$card-dk-bg;
     // }
 
     .card__holder {
@@ -26,7 +26,8 @@
       color: $secondary;
     }
     .card__title,
-    .list__title {
+    .list__title,
+    .card--link {
       color: $secondary;
     }
   }

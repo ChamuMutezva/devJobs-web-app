@@ -48,13 +48,14 @@
 .card__title {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
-  padding: .5rem;
+  font-size: 1.25rem;  
 }
+
 .card--link {
   display: inline-block;
   text-decoration: none;
   color: utils.$card-dk-bg;
+  padding: .5rem;
   &:hover,
   &:focus {
     cursor: pointer;

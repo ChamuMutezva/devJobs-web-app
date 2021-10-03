@@ -20,12 +20,14 @@ const Card = (props) => {
                     <span className="duration__hrs">{props.duration}</span>
                     <span className="span__contract">{props.contract}</span>
                 </div>
-                <Link className="card--link"
-                    to={`/ListPage/:${props.id}`}
-                    onClick={props.linkClicked}>
-                    <span className="sr__only">position offered</span>
-                    <h2 className="card__title">{props.position}</h2>
-                </Link>
+                <h2 className="card__title">
+                    <Link className="card--link"
+                        to={`/ListPage/:${props.id}`}
+                        onClick={props.linkClicked}>
+                        <span className="sr__only">position offered</span>
+                        {props.position}
+                    </Link>
+                </h2>
                 <p className="company__name">{props.company}</p>
             </div>
 
