@@ -5,14 +5,14 @@
   margin: auto;
   max-width: 69.375rem;
   position: relative;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     padding: 0.5rem 2.5rem;
   }
 }
 
 .list__main {
   padding: 0.5rem 2.5rem 0;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     padding: 0.5rem 2.5rem;
     max-width: 45.625rem;
   }
@@ -27,7 +27,7 @@
   background-color: #f4f6f8;
   opacity: 0.5;
   z-index: 1;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: none;
   }
 }

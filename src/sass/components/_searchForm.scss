@@ -1,5 +1,5 @@
-@use 'sass:math';
-@use '../utils';
+@use "sass:math";
+@use "../utils";
 
 .search__form {
   position: relative;
@@ -7,7 +7,7 @@
   border-radius: 6px;
   z-index: 2;
 
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: flex;
   }
 }
@@ -15,13 +15,13 @@
 .input__container {
   position: relative;
   border: 1px solid transparent;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     border: none;
   }
 }
 
 .title__filter__holder {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     flex: 1 1 33.3%;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -37,7 +37,7 @@
   box-shadow: 2px 2px 3px 4px lightgray;
   border-radius: 6px;
   z-index: 1;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     position: relative;
     box-shadow: none;
     top: 0;
@@ -51,7 +51,7 @@
 
 .open__options {
   display: block;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: flex;
   }
 }
@@ -63,24 +63,23 @@
   width: 100%;
   border: 1px solid transparent;
   border-radius: 6px;
- 
+
   @include utils.hoverFocus;
 
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    padding: 1.8rem 5rem;
   }
 }
 
 .time__filter {
   @include utils.hoverFocus;
- 
 }
 
 .input__search__loc {
   padding: 1.8rem 3rem;
   @include utils.hoverFocus;
-  
 }
 
 .search--btn {
@@ -92,9 +91,14 @@
   top: 30%;
   border-radius: 6px;
   @include utils.hoverFocus;
- 
+
   .search__img {
     padding: 0.5rem;
+  }
+
+  @media screen and (min-width: 47.5rem) {
+    left: 1rem;
+    right: auto;
   }
 }
 
@@ -105,8 +109,8 @@
   right: 6rem;
   top: 45%;
   @include utils.hoverFocus;
-  
-  @media screen and (min-width: 42.5rem) {
+
+  @media screen and (min-width: 47.5rem) {
     display: none;
   }
 }
@@ -117,14 +121,13 @@
   transform-origin: top left;
   transform: translate(1rem, 1.5rem) scale(1);
   transition: all 0.1s ease-in-out;
-  @media screen and (min-width: 42.5rem) {
-    transform: translate(2rem, 2rem) scale(1);
+  @media screen and (min-width: 47.5rem) {
+    transform: translate(5rem, 2rem) scale(1);
   }
 }
 
 .input__label__search {
   transform: translate(3rem, 2rem) scale(1);
-  
 }
 
 .input__container.active label {
@@ -157,11 +160,12 @@
     background-color: lighten(utils.$blue-bg-color, 20%);
   }
 
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     position: absolute;
     right: 0;
     max-width: 5.25rem;
     margin: 1rem;
+    padding: 1rem .5rem;
   }
 
   @media screen and (min-width: 69.375rem) {
@@ -172,16 +176,17 @@
 .location__filter__time {
   border-top: 1px solid utils.$card-dk-bg;
   padding: 1rem;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     flex: 1 1 60%;
     border-top: none;
-    gap: .4rem;
+    gap: 0.4rem;
     display: flex;
     align-items: center;
+    padding: 1rem .25rem;
   }
 }
 .location__filter__holder {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     flex: 1 1 50%;
     border-left: 1px solid utils.$lt-grey;
     border-right: 1px solid utils.$lt-grey;
@@ -189,6 +194,6 @@
 }
 
 .time__filter {
-	width: 1.5rem;
-	height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }

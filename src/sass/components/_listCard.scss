@@ -2,7 +2,7 @@
 @use "../utils";
 
 .list__card {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: flex;
     padding: 0;
   }
@@ -11,7 +11,7 @@
 .list__card__img__holder {
   left: 50%;
   margin-left: -25px;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     left: 0%;
     top: 0;
     margin-left: 0px;
@@ -23,13 +23,13 @@
 }
 
 .list__card__img {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     transform: scale(2);
   }
 }
 
 .company__details__splitter {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     flex: 1 1 70%;
     display: flex;
     justify-content: space-between;
@@ -41,7 +41,7 @@
 .list__card__holder {
   text-align: center;
   margin-top: -1rem;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     overflow: hidden;
     border-radius: 0 6px 6px 6px;
     margin-top: -3rem;
@@ -78,12 +78,12 @@
   border-radius: 6px;
   margin-bottom: 5rem;
 
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     padding: 2rem 2.5rem;
   }
 }
 .card__details__more {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: flex;
     justify-items: center;
     margin-bottom: 3rem;
@@ -91,7 +91,7 @@
 }
 
 .company__more {
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     flex: 1 1 70%;
   }
 }
@@ -109,7 +109,7 @@
     width: 100%;
   }
   
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     width: 100%;
     left: 0;
     .footer__apply--btn {
@@ -121,7 +121,7 @@
 .footer__content {
   max-width: 45.625rem;
   margin: auto;
-  @media screen and (min-width: 42.5rem) {
+  @media screen and (min-width: 47.5rem) {
     display: flex;
     align-items: center;
     padding: 0rem 1.5rem;

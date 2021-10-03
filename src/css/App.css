@@ -375,7 +375,7 @@ select {
   border-radius: 6px;
   z-index: 2;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .search__form {
     display: flex;
   }
@@ -385,13 +385,13 @@ select {
   position: relative;
   border: 1px solid transparent;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .input__container {
     border: none;
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .title__filter__holder {
     flex: 1 1 33.3%;
     border-bottom-right-radius: 0;
@@ -409,7 +409,7 @@ select {
   border-radius: 6px;
   z-index: 1;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .optional__search {
     position: relative;
     box-shadow: none;
@@ -425,7 +425,7 @@ select {
 .open__options {
   display: block;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .open__options {
     display: flex;
   }
@@ -444,10 +444,11 @@ select {
   outline: dashed currentColor;
   outline-offset: 0.25em;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .input__search {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    padding: 1.8rem 5rem;
   }
 }
 
@@ -483,6 +484,12 @@ select {
 .search--btn .search__img {
   padding: 0.5rem;
 }
+@media screen and (min-width: 47.5rem) {
+  .search--btn {
+    left: 1rem;
+    right: auto;
+  }
+}
 
 .open__options--btn {
   border: none;
@@ -496,7 +503,7 @@ select {
   outline: dashed currentColor;
   outline-offset: 0.25em;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .open__options--btn {
     display: none;
   }
@@ -509,9 +516,9 @@ select {
   transform: translate(1rem, 1.5rem) scale(1);
   transition: all 0.1s ease-in-out;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .input__label {
-    transform: translate(2rem, 2rem) scale(1);
+    transform: translate(5rem, 2rem) scale(1);
   }
 }
 
@@ -547,12 +554,13 @@ select {
   outline-offset: 0.25em;
   background-color: #afb4f0;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .full__search--btn {
     position: absolute;
     right: 0;
     max-width: 5.25rem;
     margin: 1rem;
+    padding: 1rem 0.5rem;
   }
 }
 @media screen and (min-width: 69.375rem) {
@@ -565,17 +573,18 @@ select {
   border-top: 1px solid #1d222a;
   padding: 1rem;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .location__filter__time {
     flex: 1 1 60%;
     border-top: none;
     gap: 0.4rem;
     display: flex;
     align-items: center;
+    padding: 1rem 0.25rem;
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .location__filter__holder {
     flex: 1 1 50%;
     border-left: 1px solid #f3f5f7;
@@ -588,7 +597,7 @@ select {
   height: 1.5rem;
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__card {
     display: flex;
     padding: 0;
@@ -599,7 +608,7 @@ select {
   left: 50%;
   margin-left: -25px;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__card__img__holder {
     left: 0%;
     top: 0;
@@ -611,13 +620,13 @@ select {
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__card__img {
     transform: scale(2);
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .company__details__splitter {
     flex: 1 1 70%;
     display: flex;
@@ -631,7 +640,7 @@ select {
   text-align: center;
   margin-top: -1rem;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__card__holder {
     overflow: hidden;
     border-radius: 0 6px 6px 6px;
@@ -670,13 +679,13 @@ select {
   border-radius: 6px;
   margin-bottom: 5rem;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .details {
     padding: 2rem 2.5rem;
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .card__details__more {
     display: flex;
     justify-items: center;
@@ -684,7 +693,7 @@ select {
   }
 }
 
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .company__more {
     flex: 1 1 70%;
   }
@@ -703,7 +712,7 @@ select {
 .footer .footer__apply--btn {
   width: 100%;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .footer {
     width: 100%;
     left: 0;
@@ -717,7 +726,7 @@ select {
   max-width: 45.625rem;
   margin: auto;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .footer__content {
     display: flex;
     align-items: center;
@@ -741,7 +750,7 @@ select {
   font-size: 1.25rem;
   color: #1d222a;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .card__title__listpage,
 .requirements__title,
 .list__title {
@@ -779,7 +788,7 @@ select {
   outline-offset: 0.25em;
   background-color: #afb4f0;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .apply--btn {
     margin: auto;
     padding: 1rem 2rem;
@@ -802,7 +811,7 @@ select {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__title {
     margin-bottom: 1rem;
     margin-top: 0rem;
@@ -836,7 +845,7 @@ select {
   background-size: cover;
   padding: 2rem 1.5rem 4.5rem;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .header {
     background-image: url("../../assets/tablet/bg-pattern-header.svg");
     padding: 5.5rem 1.5rem 5.5rem;
@@ -862,7 +871,7 @@ select {
   max-width: 69.375rem;
   position: relative;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .main {
     padding: 0.5rem 2.5rem;
   }
@@ -871,7 +880,7 @@ select {
 .list__main {
   padding: 0.5rem 2.5rem 0;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .list__main {
     padding: 0.5rem 2.5rem;
     max-width: 45.625rem;
@@ -888,7 +897,7 @@ select {
   opacity: 0.5;
   z-index: 1;
 }
-@media screen and (min-width: 42.5rem) {
+@media screen and (min-width: 47.5rem) {
   .overlay {
     display: none;
   }
