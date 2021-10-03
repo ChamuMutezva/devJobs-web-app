@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { useHistory } from 'react-router'
 import { JobsContext } from '../Context/JobsContext'
 import Card from './Card'
@@ -36,7 +36,6 @@ const HomePage = () => {
     const routeChange = (evt, id) => {
         evt.preventDefault()
         history.push(`job/${id}`)
-
     }
 
     //search by title function
@@ -57,7 +56,6 @@ const HomePage = () => {
             } else {
                 return allCards[index].classList.remove('search__hide')
             }
-
         })
         
     }
