@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import Tippy from '@tippy.js/react'
+import 'tippy.js/dist/tippy.css'
 
 const Card = (props) => {
 
@@ -21,12 +23,14 @@ const Card = (props) => {
                     <span className="span__contract">{props.contract}</span>
                 </div>
                 <h2 className="card__title">
-                    <Link className="card--link"
-                        to={`/ListPage/:${props.id}`}
-                        onClick={props.linkClicked}>
-                        <span className="sr__only">position offered</span>
-                        {props.position}
-                    </Link>
+                    <Tippy content={`apply here`}>
+                        <Link className="card--link"
+                            to={`/ListPage/:${props.id}`}
+                            onClick={props.linkClicked}>
+                            <span className="sr__only">position offered</span>
+                            {props.position}
+                        </Link>
+                    </Tippy>
                 </h2>
                 <p className="company__name">{props.company}</p>
             </div>
