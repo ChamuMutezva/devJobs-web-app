@@ -1,8 +1,29 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Tippy from '@tippy.js/react'
 import 'tippy.js/dist/tippy.css'
 
+
 const Card = (props) => {
+
+    useEffect(() => {
+        // console.log(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".card__img__holder", {
+            scrollTrigger: {
+                trigger: ".card__img__holder",
+                toggleActions: "restart pause reverse none",
+            },
+            ease: "yoyo",
+            duration: 1,
+            rotation: 360,
+            stagger: 0.5,
+            opacity: 1
+        })
+
+    })
 
     return (
         <div className="card">
